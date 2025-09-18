@@ -1,0 +1,27 @@
+[{
+  "title": "Tools & Resources",
+  "slug": "tools-resources",
+  "portal": true,
+  "weight": 3,
+  "image": "/img/hero/tools.jpg",
+  "text": "Please register or sign in to access Eklund's Customer Portal. Our customer portal allows prospective customers and current customers access to our virtual <a href=\"/tools-resources/design-studio\"> Cab Design Studio</a>. <br><br>\n\nWe also invite you to browse through our <a href=\"/tools-resources/photo-gallery\">project photo gallery</a> to see completed projects to inspire your elevator cab interior.<br><br>",
+  "pages": [{
+    "title": "Customer Portal",
+    "slug": "customer-portal",
+    "portal": false,
+    "weight": 0,
+    "parent": "tools-resources",
+    "image": "",
+    "text": "none",
+    "isCustomerPortal": true
+  }, {
+    "title": "Cab Design Studio",
+    "slug": "design-studio",
+    "portal": false,
+    "weight": 1,
+    "parent": "tools-resources",
+    "image": "",
+    "text": "none",
+    "isDesignStudio": true
+  }]
+}]

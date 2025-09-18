@@ -1,0 +1,54 @@
+{
+  "contactEmailTo": "Shelby Tidmore <stidmore@eklunds.com>",
+  "contactEmailFrom": "Eklunds.com Contact Form <no-reply@eklunds.com>",
+  "signUpEmailTo": "Shelby Tidmore <stidmore@eklunds.com>",
+  "signUpEmailFrom": "Eklunds.com Contact Form <no-reply@eklunds.com>",
+  "tagCategories": [
+    {
+      "category": "Type",
+      "tags": ["Passenger", "Observation (Glass)", "Freight/Service"]
+    },
+    {
+      "category": "Design",
+      "tags": ["Custom Elevator Interiors", "Standard Cab Designs"]
+    },
+    {
+      "category": "Project",
+      "tags": ["New Construction", "Modernization/Renovation"]
+    },
+    {
+      "category": "Details",
+      "tags": ["Ceilings/Lighting", "Handrails", "Front Returns", "Cladding"]
+    },
+    {
+      "category": "Property",
+      "tags": [
+        "Health Care",
+        "Hospitality",
+        "Residential High Rise",
+        "Education",
+        "Civic/Cultural",
+        "Government/Justice",
+        "Commercial Office/Corporate",
+        "Retail"
+      ]
+    },
+    {
+      "category": "Material/Finish",
+      "tags": [
+        "Wood",
+        "Wood Veneer",
+        "Plastic Laminate",
+        "Stone",
+        "Leather/Textiles",
+        "Glass",
+        "Solid Surface",
+        "Metal"
+      ]
+    },
+    {
+      "category": "Price",
+      "tags": ["$", "$$", "$$$", "$$$$"]
+    }
+  ]
+}

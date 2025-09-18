@@ -1,0 +1,939 @@
+{
+  "format": "javascript-image-pre1",
+  "arch": "os",
+  "load": [
+    {
+      "node_modules": "npm/node_modules/meteor/meteor/node_modules",
+      "path": "packages/meteor.js"
+    },
+    {
+      "path": "packages/meteor-base.js"
+    },
+    {
+      "path": "packages/mobile-experience.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/npm-mongo/node_modules",
+      "path": "packages/npm-mongo.js"
+    },
+    {
+      "path": "packages/ecmascript-runtime.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/modules-runtime/node_modules",
+      "path": "packages/modules-runtime.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/modules/node_modules",
+      "path": "packages/modules.js"
+    },
+    {
+      "path": "packages/modern-browsers.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/es5-shim/node_modules",
+      "path": "packages/es5-shim.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/promise/node_modules",
+      "path": "packages/promise.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/ecmascript-runtime-client/node_modules",
+      "path": "packages/ecmascript-runtime-client.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/ecmascript-runtime-server/node_modules",
+      "path": "packages/ecmascript-runtime-server.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/babel-compiler/node_modules",
+      "path": "packages/babel-compiler.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/react-fast-refresh/node_modules",
+      "path": "packages/react-fast-refresh.js"
+    },
+    {
+      "sourceMap": "packages/ecmascript.js.map",
+      "path": "packages/ecmascript.js"
+    },
+    {
+      "path": "packages/babel-runtime.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/fetch/node_modules",
+      "path": "packages/fetch.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/inter-process-messaging/node_modules",
+      "path": "packages/inter-process-messaging.js"
+    },
+    {
+      "path": "packages/dynamic-import.js"
+    },
+    {
+      "sourceMap": "packages/base64.js.map",
+      "path": "packages/base64.js"
+    },
+    {
+      "sourceMap": "packages/ejson.js.map",
+      "path": "packages/ejson.js"
+    },
+    {
+      "sourceMap": "packages/diff-sequence.js.map",
+      "path": "packages/diff-sequence.js"
+    },
+    {
+      "path": "packages/geojson-utils.js"
+    },
+    {
+      "sourceMap": "packages/id-map.js.map",
+      "path": "packages/id-map.js"
+    },
+    {
+      "sourceMap": "packages/random.js.map",
+      "path": "packages/random.js"
+    },
+    {
+      "sourceMap": "packages/mongo-id.js.map",
+      "path": "packages/mongo-id.js"
+    },
+    {
+      "sourceMap": "packages/ordered-dict.js.map",
+      "path": "packages/ordered-dict.js"
+    },
+    {
+      "sourceMap": "packages/tracker.js.map",
+      "path": "packages/tracker.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/mongo-decimal/node_modules",
+      "sourceMap": "packages/mongo-decimal.js.map",
+      "path": "packages/mongo-decimal.js"
+    },
+    {
+      "sourceMap": "packages/minimongo.js.map",
+      "path": "packages/minimongo.js"
+    },
+    {
+      "sourceMap": "packages/check.js.map",
+      "path": "packages/check.js"
+    },
+    {
+      "sourceMap": "packages/retry.js.map",
+      "path": "packages/retry.js"
+    },
+    {
+      "sourceMap": "packages/callback-hook.js.map",
+      "path": "packages/callback-hook.js"
+    },
+    {
+      "sourceMap": "packages/ddp-common.js.map",
+      "path": "packages/ddp-common.js"
+    },
+    {
+      "path": "packages/reload.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/socket-stream-client/node_modules",
+      "sourceMap": "packages/socket-stream-client.js.map",
+      "path": "packages/socket-stream-client.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/ddp-client/node_modules",
+      "sourceMap": "packages/ddp-client.js.map",
+      "path": "packages/ddp-client.js"
+    },
+    {
+      "path": "packages/underscore.js"
+    },
+    {
+      "sourceMap": "packages/rate-limit.js.map",
+      "path": "packages/rate-limit.js"
+    },
+    {
+      "sourceMap": "packages/ddp-rate-limiter.js.map",
+      "path": "packages/ddp-rate-limiter.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/logging/node_modules",
+      "sourceMap": "packages/logging.js.map",
+      "path": "packages/logging.js"
+    },
+    {
+      "sourceMap": "packages/routepolicy.js.map",
+      "path": "packages/routepolicy.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/boilerplate-generator/node_modules",
+      "sourceMap": "packages/boilerplate-generator.js.map",
+      "path": "packages/boilerplate-generator.js"
+    },
+    {
+      "sourceMap": "packages/webapp-hashing.js.map",
+      "path": "packages/webapp-hashing.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/webapp/node_modules",
+      "sourceMap": "packages/webapp.js.map",
+      "path": "packages/webapp.js"
+    },
+    {
+      "path": "packages/audit-argument-checks.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/ddp-server/node_modules",
+      "sourceMap": "packages/ddp-server.js.map",
+      "path": "packages/ddp-server.js"
+    },
+    {
+      "path": "packages/ddp.js"
+    },
+    {
+      "sourceMap": "packages/allow-deny.js.map",
+      "path": "packages/allow-deny.js"
+    },
+    {
+      "sourceMap": "packages/binary-heap.js.map",
+      "path": "packages/binary-heap.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/mongo/node_modules",
+      "sourceMap": "packages/mongo.js.map",
+      "path": "packages/mongo.js"
+    },
+    {
+      "path": "packages/blaze-html-templates.js"
+    },
+    {
+      "path": "packages/session.js"
+    },
+    {
+      "path": "packages/jquery.js"
+    },
+    {
+      "path": "packages/observe-sequence.js"
+    },
+    {
+      "sourceMap": "packages/htmljs.js.map",
+      "path": "packages/htmljs.js"
+    },
+    {
+      "path": "packages/reactive-var.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/blaze/node_modules",
+      "sourceMap": "packages/blaze.js.map",
+      "path": "packages/blaze.js"
+    },
+    {
+      "path": "packages/spacebars.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/url/node_modules",
+      "path": "packages/url.js"
+    },
+    {
+      "sourceMap": "packages/accounts-base.js.map",
+      "path": "packages/accounts-base.js"
+    },
+    {
+      "path": "packages/sha.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/email/node_modules",
+      "sourceMap": "packages/email.js.map",
+      "path": "packages/email.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/accounts-password/node_modules",
+      "sourceMap": "packages/accounts-password.js.map",
+      "path": "packages/accounts-password.js"
+    },
+    {
+      "path": "packages/spiderable.js",
+      "assets": {
+        "phantom_script.js": "assets/packages/spiderable/phantom_script.js"
+      }
+    },
+    {
+      "path": "packages/mrt_moment.js"
+    },
+    {
+      "path": "packages/mrt_jquery-ui.js"
+    },
+    {
+      "path": "packages/ui.js"
+    },
+    {
+      "path": "packages/templating-compiler.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/templating-runtime/node_modules",
+      "path": "packages/templating-runtime.js"
+    },
+    {
+      "path": "packages/templating.js"
+    },
+    {
+      "path": "packages/iron_core.js"
+    },
+    {
+      "path": "packages/iron_dynamic-template.js"
+    },
+    {
+      "path": "packages/iron_layout.js"
+    },
+    {
+      "path": "packages/iron_url.js"
+    },
+    {
+      "path": "packages/iron_middleware-stack.js"
+    },
+    {
+      "path": "packages/iron_location.js"
+    },
+    {
+      "sourceMap": "packages/reactive-dict.js.map",
+      "path": "packages/reactive-dict.js"
+    },
+    {
+      "path": "packages/iron_controller.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/iron_router/node_modules",
+      "path": "packages/iron_router.js"
+    },
+    {
+      "path": "packages/raix_handlebar-helpers.js"
+    },
+    {
+      "path": "packages/fastclick.js"
+    },
+    {
+      "path": "packages/deps.js"
+    },
+    {
+      "path": "packages/meteorhacks_subs-manager.js"
+    },
+    {
+      "path": "packages/meteorhacks_npm.js"
+    },
+    {
+      "path": "packages/tmeasday_publish-counts.js"
+    },
+    {
+      "path": "packages/cfs_standard-packages.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/cfs_graphicsmagick/node_modules",
+      "path": "packages/cfs_graphicsmagick.js"
+    },
+    {
+      "path": "packages/cfs_base-package.js"
+    },
+    {
+      "path": "packages/livedata.js"
+    },
+    {
+      "path": "packages/mongo-livedata.js"
+    },
+    {
+      "path": "packages/raix_eventemitter.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/cfs_storage-adapter/node_modules",
+      "path": "packages/cfs_storage-adapter.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/cfs_filesystem/node_modules",
+      "path": "packages/cfs_filesystem.js"
+    },
+    {
+      "path": "packages/aldeed_template-extension.js"
+    },
+    {
+      "path": "packages/chriswessels_hammer.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/npm-container/node_modules",
+      "path": "packages/npm-container.js",
+      "assets": {
+        "../../packages.json": "assets/packages.json"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/meteorhacks_picker/node_modules",
+      "path": "packages/meteorhacks_picker.js"
+    },
+    {
+      "path": "packages/okgrow_router-autoscroll.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/minifier-css/node_modules",
+      "sourceMap": "packages/minifier-css.js.map",
+      "path": "packages/minifier-css.js"
+    },
+    {
+      "path": "packages/standard-minifier-css.js"
+    },
+    {
+      "path": "packages/standard-minifier-js.js"
+    },
+    {
+      "sourceMap": "packages/shell-server.js.map",
+      "path": "packages/shell-server.js"
+    },
+    {
+      "path": "packages/hot-code-push.js"
+    },
+    {
+      "path": "packages/launch-screen.js"
+    },
+    {
+      "path": "packages/meteorhacks_async.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/http/node_modules",
+      "path": "packages/http.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/cfs_data-man/node_modules",
+      "path": "packages/cfs_data-man.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/cfs_file/node_modules",
+      "path": "packages/cfs_file.js"
+    },
+    {
+      "node_modules": "npm/node_modules/meteor/cfs_tempstore/node_modules",
+      "path": "packages/cfs_tempstore.js"
+    },
+    {
+      "path": "packages/cfs_http-methods.js"
+    },
+    {
+      "path": "packages/cfs_http-publish.js"
+    },
+    {
+      "path": "packages/cfs_access-point.js"
+    },
+    {
+      "path": "packages/cfs_reactive-property.js"
+    },
+    {
+      "path": "packages/cfs_reactive-list.js"
+    },
+    {
+      "path": "packages/cfs_power-queue.js"
+    },
+    {
+      "path": "packages/cfs_upload-http.js"
+    },
+    {
+      "path": "packages/cfs_collection.js"
+    },
+    {
+      "path": "packages/cfs_collection-filters.js"
+    },
+    {
+      "path": "packages/cfs_worker.js"
+    },
+    {
+      "sourceMap": "packages/autoupdate.js.map",
+      "path": "packages/autoupdate.js"
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/global-imports.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/dates.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/makeSlug.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/meteor-file.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/regions.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/router.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/sanitize.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/lib/users.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/server/startup/initialize.settings.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/collections/cabs.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/collections/documents.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/collections/images.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "news.json": "assets/app/news.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/collections/pages.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/collections/settings.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/collections/users.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/server/kadira.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/server/publications.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "node_modules": "npm/node_modules",
+      "path": "app/server/server.js",
+      "assets": {
+        "JasonSpeicherNews.jpg": "assets/app/JasonSpeicherNews.jpg",
+        "SteveJohnsonNews.jpg": "assets/app/SteveJohnsonNews.jpg",
+        "dummyText": "assets/app/dummyText",
+        "initialSettings.json": "assets/app/initialSettings.json",
+        "meta.json": "assets/app/meta.json",
+        "pages.json": "assets/app/pages.json",
+        "pl.jpg": "assets/app/pl.jpg",
+        "placeholder-md.png": "assets/app/placeholder-md.png",
+        "profiles.json": "assets/app/profiles.json",
+        "profiles/AnnetteAndre.png": "assets/app/profiles/AnnetteAndre.png",
+        "profiles/BethCunningham.jpg": "assets/app/profiles/BethCunningham.jpg",
+        "profiles/DallasHartmann.jpg": "assets/app/profiles/DallasHartmann.jpg",
+        "profiles/HeathCunningham.jpg": "assets/app/profiles/HeathCunningham.jpg",
+        "profiles/JacquelineBeruete.jpg": "assets/app/profiles/JacquelineBeruete.jpg",
+        "profiles/JanelDurko.jpg": "assets/app/profiles/JanelDurko.jpg",
+        "profiles/JosephEklund.jpg": "assets/app/profiles/JosephEklund.jpg",
+        "profiles/MichelleManning.jpg": "assets/app/profiles/MichelleManning.jpg",
+        "profiles/NoImage.jpg": "assets/app/profiles/NoImage.jpg",
+        "profiles/ScottBachhuber.jpg": "assets/app/profiles/ScottBachhuber.jpg",
+        "profiles/SteveJohnson.jpg": "assets/app/profiles/SteveJohnson.jpg",
+        "profiles/SusanFlyzik.jpg": "assets/app/profiles/SusanFlyzik.jpg"
+      }
+    },
+    {
+      "sourceMap": "packages/service-configuration.js.map",
+      "path": "packages/service-configuration.js"
+    }
+  ]
+}

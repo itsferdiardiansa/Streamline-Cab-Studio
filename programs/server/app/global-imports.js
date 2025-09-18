@@ -1,0 +1,46 @@
+/* Imports for global scope */
+
+MongoInternals = Package.mongo.MongoInternals;
+Mongo = Package.mongo.Mongo;
+Tracker = Package.tracker.Tracker;
+Deps = Package.tracker.Deps;
+Log = Package.logging.Log;
+Random = Package.random.Random;
+EJSON = Package.ejson.EJSON;
+Spacebars = Package.spacebars.Spacebars;
+check = Package.check.check;
+Match = Package.check.Match;
+Accounts = Package['accounts-base'].Accounts;
+Spiderable = Package.spiderable.Spiderable;
+Email = Package.email.Email;
+EmailInternals = Package.email.EmailInternals;
+moment = Package['mrt:moment'].moment;
+Router = Package['iron:router'].Router;
+RouteController = Package['iron:router'].RouteController;
+Helpers = Package['raix:handlebar-helpers'].Helpers;
+SubsManager = Package['meteorhacks:subs-manager'].SubsManager;
+ReactiveVar = Package['reactive-var'].ReactiveVar;
+Counts = Package['tmeasday:publish-counts'].Counts;
+publishCount = Package['tmeasday:publish-counts'].publishCount;
+gm = Package['cfs:graphicsmagick'].gm;
+Hammer = Package['chriswessels:hammer'].Hammer;
+Picker = Package['meteorhacks:picker'].Picker;
+_ = Package.underscore._;
+Meteor = Package.meteor.Meteor;
+global = Package.meteor.global;
+meteorEnv = Package.meteor.meteorEnv;
+WebApp = Package.webapp.WebApp;
+WebAppInternals = Package.webapp.WebAppInternals;
+main = Package.webapp.main;
+DDP = Package['ddp-client'].DDP;
+DDPServer = Package['ddp-server'].DDPServer;
+LaunchScreen = Package['launch-screen'].LaunchScreen;
+Blaze = Package.ui.Blaze;
+UI = Package.ui.UI;
+Handlebars = Package.ui.Handlebars;
+Iron = Package['iron:core'].Iron;
+Async = Package['meteorhacks:async'].Async;
+FS = Package['cfs:base-package'].FS;
+Autoupdate = Package.autoupdate.Autoupdate;
+HTML = Package.htmljs.HTML;
+
