@@ -1,0 +1,873 @@
+/*=================================================
+Eklund's - 2019
+=================================================*/
+/*== Reset ==*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  background: #333;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #4a6454;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #4a6454;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.left {
+  text-align: left !important;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.valign,
+.valign input,
+.valign img {
+  vertical-align: middle;
+}
+
+.required {
+  color: red;
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  background: url(/img/loading.gif) no-repeat center center;
+  background-color: #eee;
+}
+
+/*== Common ==*/
+body {
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+  text-align: center;
+}
+
+.wrapper-admin {
+  margin-bottom: 44px;
+}
+
+/*== Content ==*/
+.content {
+  position: relative;
+  width: 960px;
+  margin: auto;
+  text-align: left;
+  font: 14px "Red Hat Display", helvetica, arial, sans-serif;
+  padding: 40px 0;
+  min-height: 300px;
+}
+
+.content-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #eee;
+  display: flex;
+  align-items: center;
+}
+
+.content h1 {
+  font: 22px "Source Sans Pro", helvetica, arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.content__container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.content__container-home {
+  justify-content: space-between;
+}
+
+.content__container-home section {
+  width: 500px;
+  line-height: 1.4em;
+}
+
+.content__container-home nav {
+  display: none;
+}
+
+.content-portal {
+  width: 100%;
+  padding: 75px 0 0;
+}
+
+.content-portal__child {
+  display: block;
+  position: relative;
+  width: 200px;
+  background: #fff;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.content-portal__child img {
+  display: block;
+}
+
+.content-portal__child-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 20px 0;
+  background: #e0e0e0;
+}
+
+.content-portal__child-container--back a {
+  display: inline-block;
+  text-decoration: none;
+  color: #999;
+  margin-bottom: 15px;
+  transition: all ease 0.3s;
+}
+
+.content-portal__child-container--back a:hover {
+  opacity: 0.7;
+}
+
+.content-portal__child-container--back a span {
+  text-transform: capitalize;
+}
+
+.content-portal__child-container--back span {
+  display: inline-block;
+}
+
+.content-portal__child-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 52px;
+  line-height: 1;
+  padding: 8px 10px;
+  background-color: #fff;
+  transition: all ease 0.3s;
+}
+
+.content-portal__child-active--custom-cabs-interiors .content-portal__child:nth-child(1) .content-portal__child-title, .content-portal__child-active--streamline-cabs .content-portal__child:nth-child(2) .content-portal__child-title, .content-portal__child-active--cladding .content-portal__child:nth-child(3) .content-portal__child-title, .content-portal__child-active--design-engineering .content-portal__child:nth-child(1) .content-portal__child-title, .content-portal__child-active--project-management .content-portal__child:nth-child(2) .content-portal__child-title, .content-portal__child-active--manufacturing .content-portal__child:nth-child(3) .content-portal__child-title, .content-portal__child-active--installation .content-portal__child:nth-child(4) .content-portal__child-title, .content-portal__child-active--property-managers-owners .content-portal__child:nth-child(1) .content-portal__child-title, .content-portal__child-active--architects-designers .content-portal__child:nth-child(3) .content-portal__child-title, .content-portal__child-active--elevator-industry .content-portal__child:nth-child(4) .content-portal__child-title, .content-portal__child-active--general-contractors .content-portal__child:nth-child(5) .content-portal__child-title, .content-portal__child-active--modernization-renovation .content-portal__child:nth-child(1) .content-portal__child-title, .content-portal__child-active--new-construction .content-portal__child:nth-child(2) .content-portal__child-title, .content-portal__child-active--photo-gallery .content-portal__child:nth-child(4) .content-portal__child-title, .content-portal__child-active--featured-projects .content-portal__child:nth-child(5) .content-portal__child-title, .content-portal__child-active--our-team .content-portal__child:nth-child(2) .content-portal__child-title, .content-portal__child-active--careers .content-portal__child:nth-child(3) .content-portal__child-title, .content-portal__child-active--news .content-portal__child:nth-child(4) .content-portal__child-title, .content-portal__child-active--testimonials .content-portal__child:nth-child(5) .content-portal__child-title, .content-portal__child:hover .content-portal__child-title {
+  color: #fff;
+  background: #a4b7a9;
+}
+
+.content-portal__parent-customers .content-portal__child:nth-child(2), .content-portal__parent-projects .content-portal__child:nth-child(3), .content-portal__parent-company .content-portal__child:nth-child(1), .content-portal__parent-products .content-portal__child:nth-child(3) {
+  display: none !important;
+}
+
+.content-portal__body {
+  width: 780px;
+  padding: 40px 0;
+  margin: auto;
+  line-height: 1.4em;
+}
+
+.content-portal__body h2 {
+  font: 18px "Source Sans Pro", helvetica, arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.content-portal__body ul {
+  margin-left: 25px;
+}
+
+.content-portal__body ul li {
+  list-style: disc;
+  margin-top: 5px;
+}
+
+.content-portal__body-flex aside {
+  width: 300px;
+  margin-right: 40px;
+}
+
+.content-portal__body-flex aside img {
+  width: 300px;
+  height: auto;
+}
+
+.content-portal__body-flex img {
+  width: 300px;
+  height: 100%;
+}
+
+#page .content-portal__body-flex img {
+  margin-left: 40px;
+}
+
+#portal .content-portal__body-flex img {
+  margin-right: 40px;
+}
+
+.content-portal__studio {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.content-portal__studio-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.content-portal__studio-right {
+  width: 320px;
+  text-align: center;
+}
+
+.content-portal__studio-right-main {
+  width: 100%;
+  height: auto;
+}
+
+.content-portal__studio-right img {
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.content-portal__studio-right a {
+  text-decoration: none;
+}
+
+.content-portal__studio-right button.launchDesigner {
+  display: block;
+  margin: 20px auto 0;
+  border: 0;
+  width: auto;
+  font: 15px "Red Hat Display", helvetica, arial, sans-serif;
+  padding: 10px 30px;
+  color: #fff;
+  background: #ff8442;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.content-portal__cab-select {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.content-portal__cab-select h1 {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.content-portal__cab-select-cab {
+  width: 30%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content-portal__cab-select-cab a {
+  display: block;
+}
+
+.content-portal__cab-select-cab a img {
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.content-portal__cab-select-cab a:hover img {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.content-portal__cab-select-streamline {
+  width: 100%;
+  text-align: center;
+}
+
+.content-portal__cab-select-next {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.content-portal__cab-select-next h1 {
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.content-portal__cab-select-next h2 {
+  margin-bottom: 30px;
+}
+
+.content-portal__cab-select-next-left {
+  width: 520px;
+}
+
+.content-portal__cab-select-next-right {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.content-portal__cab-select-next-right h2 {
+  margin: 10px 0 15px;
+}
+
+.content-portal__cab-select-next-right .launchDesigner {
+  display: block;
+  margin: 20px 0 0;
+  border: 0;
+  width: auto;
+  font: 15px "Red Hat Display", helvetica, arial, sans-serif;
+  padding: 10px 30px;
+  color: #fff;
+  background: #444;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.content-portal__cab-select-next-cab {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  margin: 10px;
+}
+
+.content-portal__cab-select-next-cab:nth-of-type(6) {
+  display: none;
+}
+
+.content-portal__cab-select-next-cab img {
+  border: 1px solid #ddd;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+.content-portal__cab-select-next-cab img:hover {
+  opacity: 0.7;
+}
+
+.content-portal__cab-select-next-cab img.active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.content-portal__cab-select-next-cab h2 {
+  margin: 0;
+}
+
+.content-portal__cab-select-next-streamline {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.content-portal__signin {
+  width: 300px;
+  padding: 40px 0;
+  margin: auto;
+  line-height: 1.4em;
+}
+
+.content-portal__signin h2 {
+  font: 18px "Source Sans Pro", helvetica, arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.content-portal__signin input {
+  font: 13px "Red Hat Display", helvetica, arial, sans-serif;
+  width: 220px;
+  margin-bottom: 5px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.content-portal__signin .button {
+  margin: 10px auto 20px;
+  border: 0;
+  width: 120px;
+  font: 13px "Red Hat Display", helvetica, arial, sans-serif;
+  padding: 10px 30px;
+  color: #fff;
+  background: #444;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.content-portal__signin-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 5px;
+}
+
+.content-portal__signin-row label {
+  display: flex;
+  align-items: center;
+  width: 80px;
+}
+
+.content-portal__signup {
+  width: 450px;
+  padding: 40px 0;
+  margin: auto;
+  line-height: 1.4em;
+}
+
+.content-portal__signup h2 {
+  font: 18px "Source Sans Pro", helvetica, arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.content-portal__signup input {
+  font: 13px "Red Hat Display", helvetica, arial, sans-serif;
+  width: 220px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.content-portal__signup textarea {
+  border: 1px solid #ddd;
+  font: 13px "Red Hat Display", helvetica, arial, sans-serif;
+  width: 100%;
+  height: 100px;
+  padding: 4px;
+  margin: 5px 0 10px;
+}
+
+.content-portal__signup .button {
+  margin: 0 auto 20px;
+  border: 0;
+  width: 120px;
+  font: 13px "Red Hat Display", helvetica, arial, sans-serif;
+  padding: 10px 30px;
+  color: #fff;
+  background: #444;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.content-portal__signup-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 5px;
+}
+
+.content-portal__signup-row label {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+.content-page {
+  width: 100%;
+  padding: 75px 0 0;
+}
+
+.content-page__body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 780px;
+  padding: 40px 0;
+  margin: auto;
+  line-height: 1.4em;
+}
+
+.content-page__body h2 {
+  font: 18px "Source Sans Pro", helvetica, arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.content-page__body ul {
+  margin-left: 25px;
+}
+
+.content-page__body ul li {
+  list-style: disc;
+  margin-top: 5px;
+}
+
+.content-page__content {
+  flex: 1;
+}
+
+/* .content .cabshield-title {
+  font-size: 18px;
+  color: #32c3ee;
+  margin: 5px 0 10px;
+}
+
+.content .cabshield-callout {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 25px;
+  text-align: center;
+  color: #fff;
+  background: #32c3ee;
+}
+
+.content .cabshield-callout a {
+  color: #fff !important;
+}
+
+.content .cabshield-form {
+  max-width: 280px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 90px;
+  color: #32c3ee;
+}
+
+.content .cabshield-form-input {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.content .cabshield-form-input:first-of-type {
+  margin-top: 15px;
+}
+
+.content .cabshield-form-input input {
+  width: 90%;
+  padding: 5px;
+}
+
+.content .cabshield-form-input textarea {
+  width: 90%;
+  height: 80px;
+  padding: 5px;
+  border-color: #ccc;
+}
+
+.content .cabshield-form-input .button {
+  border: 0;
+  font-size: 14px;
+  padding: 10px 0;
+  width: 100px;
+  color: #fff;
+  background: #32c3ee;
+  border-radius: 2px;
+  cursor: pointer;
+} */
+
+.content .edit-page {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-left: 15px;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 16px;
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  background: #555;
+}
+
+/*== Icons ==*/
+.icon {
+  float: right;
+  width: 16px;
+  height: 16px;
+  display: block;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.icon.iconCabshield {
+  background: url(/img/cabshield-icon.png) center/cover;
+}
+
+.icon.iconDelete {
+  background: url(/img/sprite.png) 0 0;
+}
+
+.icon.iconDetailsCustomer {
+  background: url(/img/sprite.png) 0 -32px;
+}
+
+.icon.iconPDF {
+  background: url(/img/sprite.png) 0 -48px;
+}
+
+.icon.iconClose {
+  background: url(/img/sprite.png) 0 -64px;
+}
+
+.icon.iconDeleteImg {
+  background: url(/img/sprite.png) 0 -64px #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 3px;
+}
+
+.icon.iconCloseImg {
+  background: url(/img/sprite.png) 0 -64px #000;
+}
+
+.icon.iconSortDsc {
+  background: url(/img/sprite.png) 0 -80px;
+}
+
+.icon.iconSortAsc {
+  background: url(/img/sprite.png) 0 -96px;
+}
+
+.icon.iconExport {
+  background: url(/img/sprite.png) 0 -112px;
+}
+
+.icon.iconCheck {
+  background: url(/img/sprite.png) 0 -128px;
+}
+
+/*== Edit Mode ==*/
+.editMode {
+  width: 960px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.editMode div {
+  margin-bottom: 5px;
+}
+
+.editMode label {
+  float: left;
+  width: 120px;
+  margin-top: 5px;
+}
+
+.editMode input,
+.editMode textarea {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.editMode input {
+  width: 200px;
+}
+
+.editMode input.meta {
+  width: 400px;
+}
+
+.editMode textarea {
+  width: 450px;
+  height: 250px;
+}
+
+.editMode textarea.meta {
+  width: 450px;
+  height: 100px;
+}
+
+.editMode button {
+  margin: 25px 10px 0;
+  border: 0;
+  font-size: 14px;
+  padding: 10px 30px;
+  color: #fff;
+  background: #444;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+.content .pageContainer section .employeeProfile button {
+  margin-left: 0;
+}
+
+.editMode button:active {
+  background: #666;
+}
+
+.editMode hr {
+  width: 570px;
+  border: 0;
+  height: 1px;
+  margin: 15px 0;
+  background: #eee;
+}
+
+/*== Tablet Landscape ==*/
+@media (max-width: 1024px) {
+  .content {
+    width: 100%;
+  }
+
+  .content-portal__body {
+    width: 100%;
+    padding: 30px 40px;
+  }
+
+  .content-portal__child {
+    width: 180px;
+    height: auto;
+  }
+
+  .content-portal__child-title {
+    color: #fff;
+    background: #a4b7a9;
+  }
+}
+
+/*== Tablet Portrait ==*/
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+  }
+
+  .content-portal nav a {
+    margin: 0 15px;
+  }
+
+  .content-portal__child {
+    width: 180px;
+    height: auto;
+    margin: 0 3px;
+  }
+
+  .content .cabshield-form {
+    min-width: 100%;
+    padding: 25px 0;
+    margin-top: 30px;
+    order: 3 !important;
+  }
+
+  .hideMobile {
+    display: none !important;
+  }
+
+  .wrapper-admin {
+    margin: 0;
+  }
+}
+
+/*== Phone ==*/
+@media (max-width: 767px) {
+  .content {
+    padding: 75px 0 25px;
+  }
+
+  .content-home-xs {
+    padding-top: 25px;
+  }
+
+  .content__container aside a {
+    width: calc(100vw - 80px);
+    height: 180px;
+  }
+
+  .content__container aside a.cabshield {
+    width: calc(100vw - 80px);
+    height: 180px;
+  }
+
+  .content-portal__body {
+    padding: 25px 40px 0;
+  }
+
+  .content-portal__body-flex img {
+    margin: 0 0 20px 0 !important;
+  }
+
+  #page .content-portal__body-flex img {
+    order: 0;
+  }
+
+  #page .content-portal__body-flex div {
+    order: 1;
+  }
+
+  .content-portal nav {
+    flex-flow: row wrap;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .content-portal nav a {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .content-portal__studio-left {
+    padding: 0;
+  }
+
+  .content-portal__studio-right {
+    margin-top: 20px;
+  }
+
+  .content-portal__rep {
+    width: 100%;
+  }
+
+  .content-portal__child {
+    width: 150px;
+    height: auto;
+    margin: 5px;
+  }
+
+  .content-portal__signin input {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=styles.min.css.map */

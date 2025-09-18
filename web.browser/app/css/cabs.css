@@ -1,0 +1,4995 @@
+/*=================================================
+Eklund's Cab Designer
+February 2014
+=================================================*/
+/*== Reset ======================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+html, body {
+  height: 100%;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  filter: progid:DXImageTransform.Microsoft.Chroma(color='white'),
+		    alpha(opacity=50);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Chroma(color='white')",
+		    "alpha(opacity=50)";
+}
+.clear:before, .clear:after {
+  content: " ";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.border {
+  border: 1px solid #eee;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.valign, .valign img {
+  vertical-align: middle;
+}
+img	{
+	-ms-interpolation-mode: bicubic; /* IE */
+}
+/*== Fonts ======================================*/
+
+@font-face {
+  font-family: MyriadPro;
+  src: url(../fonts/myriadpro-regular-webfont.svg#webfontePlbhPtY) format('svg'), url(../fonts/myriadpro-regular-webfont.eot?) format('eot'), url(../fonts/myriadpro-regular-webfont.woff) format('woff'), url(../fonts/myriadpro-regular-webfont.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: MyriadProBold;
+  src: url(../fonts/myriadpro-bold-webfont.svg#webfontNikVfAPx) format('svg'), url(../fonts/myriadpro-bold-webfont.eot?) format('eot'), url(../fonts/myriadpro-bold-webfont.woff) format('woff'), url(../fonts/myriadpro-bold-webfont.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+b {
+  font-family: 'MyriadProBold', helvetica, arial, sans-serif;
+}
+/*== Layout =====================================*/
+
+body {
+  margin: 0;
+  text-align: center;
+}
+.cabWrapper {
+  position: relative;
+  width: 960px;
+  min-height: 610px;
+  margin: auto;
+  font: 12px 'MyriadPro', arial, helvetica, sans-serif;
+  background: url(/img/cab/bg.png) right repeat-y;
+}
+.materialWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -155px;
+  margin-left: -207px;
+  width: 414px;
+  min-height: 310px;
+  font: 12px 'MyriadPro', arial, helvetica, sans-serif;
+  text-align: center;
+  background: white right repeat-y;
+}
+.heading {
+  padding: 10px;
+  font: 16px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #396452;
+}
+.heading .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 19px;
+  width: 12px;
+  height: 12px;
+  display: block;
+  cursor: pointer;
+  background: url(../img/cab/close.png) no-repeat center;
+}
+.cabLogo {
+  width: 130px;
+  height: 34px;
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  background: url(/img/cab/logo.png);
+  z-index: 9999;
+}
+.leftSideWrapper {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.leftSide {
+  text-align: left;
+  margin-right: 400px;
+}
+.leftSidePadding {
+  margin: 20px;
+}
+.rightSide {
+  position: relative;
+  float: right;
+  width: 400px;
+  margin: 0 0 20px -465px;
+  background: #fff;
+}
+.rightSide .title {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  margin: 15px 0;
+  text-align: center;
+  color: #396452;
+}
+.rightSide .title span {
+  font: 16px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #000;
+  text-transform: capitalize;
+}
+.buttons {
+  position: absolute;
+  right: 190px;
+  bottom: 15px;
+}
+button, .thumbLightbox button {
+  position: relative;
+  padding: 6px 15px;
+  border: 0;
+  font: 16px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #fff;
+  background: #ff8442;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+button.bigButton {
+  padding: 12px 20px;
+  font-weight: bold;
+}
+hr.cabHr {
+  width: 100%;
+  height: 2px;
+  margin: 7px auto;
+  border: 0;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+.cabText {
+  display: table;
+  margin: 5px 30px;
+  width: 340px;
+  height: 50px;
+  text-align: center;
+  font: 14px 'MyriadPro', arial, helvetica, sans-serif;
+}
+.cabText span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.cabText.renderingMessage {
+  color: red;
+}
+.materialsNote {
+  font-size: 13px;
+  color: #444;
+  margin: 3px 0 10px 5px;
+  text-shadow: 0 1px 0 #fff;
+}
+.container {
+  font: 14px 'MyriadPro', arial, helvetica, sans-serif;
+  margin: 40px auto 0 auto;
+}
+.savingCab	{
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 598px;
+	background: rgba(255,255,255,.9);
+}
+/*== Options ==*/
+
+.optionsContainer {
+  width: 100%;
+}
+.optionsContainer .optionsItem, .optionsContainer .optionsItemSmall, .optionsContainer .optionsItemSmaller {
+  position: relative;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0 9px 0;
+  width: 123px;
+  margin: 4px;
+  color: #333;
+  background: #fff;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  -o-transition: background-color .1s ease-in-out;
+  -webkit-transition: background-color .1s ease-in-out;
+  -moz-transition: background-color .1s ease-in-out;
+  transition: background-color .1s ease-in-out;
+}
+.optionsContainer .optionsItemSmall {
+  width: 35px;
+}
+.optionsContainer .optionsItemSmaller {
+  width: auto;
+  padding: 8px 7px 7px 7px;
+  margin: 4px 3px;
+}
+.optionsContainer .optionsItem:hover, .optionsContainer .optionsItem.activeOptions, .optionsContainer .optionsItemSmall:hover, .optionsContainer .optionsItemSmall.activeOptions, .optionsContainer .optionsItemSmaller:hover, .optionsContainer .optionsItemSmaller.activeOptions {
+  color: #333;
+  background: #d5dcd9;
+}
+.optionsContainer .optionsItem.activeOptions:after, .optionsContainer .optionsItemSmall.activeOptions:after, .optionsContainer .optionsItemSmaller.activeOptions:after {
+  border-left: 7px solid transparent;
+  border-right: 8px solid transparent;
+  content: "";
+  border-top: 7px solid #d5dcd9;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  margin-left: -8px;
+}
+.optionsContainer#trimMenuOptions {
+  font-size: 14px;
+}
+.bumperOption.panelsOption.optionsItemSmall	{
+	width: auto;
+	padding: 10px 10px 9px 10px;
+}
+.panelText {
+  float: right;
+  width: auto;
+  margin: 13px 5px 0 0;
+  font-size: 14px;
+  color: #444;
+  text-shadow: 0 1px 0 #fff;
+}
+.ceilingOptionText {
+  float: right;
+  text-align: right;
+  margin: 28px 35px 0 0;
+  height: 45px;
+  font-size: 14px;
+  color: #444;
+  text-shadow: 0 1px 0 #fff;
+}
+/*== Materials ==*/
+
+.materialsContainer {
+  width: 100%;
+  height: 325px;
+  overflow-y: auto;
+}
+.materialsContainer.colorsMessage {
+  height: 300px;
+}
+#ceilingOptions .materialsContainer, .panelCeiling {
+  height: 200px;
+}
+#ceilingOptions .materialsContainer.noPanels {
+  /*height: 315px;*/
+}
+#ceilingOptions .materialsContainer.tall.noPanels {
+  height: 390px;
+}
+.materialsContainer h1 {
+  font: 16px 'MyriadPro', arial, helvetica, sans-serif;
+  font-size: 16px;
+  margin: 5px 0 2px 4px;
+  color: #396452;
+  text-shadow: 0 1px 0 #fff;
+}
+.materialsContainer h1:first-child {
+  margin: 0 0 2px 4px;
+}
+.materialsContainer .materialsItem, .subOptionsContainer .optionsItem {
+  position: relative;
+  float: left;
+  width: 93px;
+  height: 80px;
+  margin: 4px;
+  color: #222;
+  padding: 0;
+  text-align: left;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: none;
+}
+.subOptionsContainer .optionsItem {
+  height: auto;
+}
+.materialsContainer .materialsItem .expandView a, .subOptionsContainer .optionsItem .expandView a {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  cursor: pointer;
+  background: url(../img/cab/expandView.png);
+  z-index: 250;
+}
+.materialsContainer .materialsItem img, .subOptionsContainer .optionsItem img {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.materialsContainer .materialsItem h2, .subOptionsContainer .optionsItem h2, .materialsContainer .materialsItem span.name, .subOptionsContainer .optionsItem span.name {
+  font: 11px 'MyriadPro', arial, helvetica, sans-serif;
+  line-height: 1em;
+  margin: 0 0 0 2px;
+}
+.materialsContainer .materialsItem img.optionActive, .subOptionsContainer .optionsItem img.optionActive {
+  -webkit-box-shadow: 0 0 5px #ff7d38;
+  -moz-box-shadow: 0 0 5px #ff7d38;
+  box-shadow: 0 0 5px #ff7d38;
+}
+.subOptionsContainer .optionsItem:hover {
+  background: none;
+}
+.lightbox {
+  width: 976px;
+  height: 638px;
+  border: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9001;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+.materialLightbox {
+  width: 480px;
+  height: 200px;
+  border: 1px solid #aaa;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  z-index: 99999;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+.thumbLightbox {
+  width: 420px;
+  padding: 10px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+.thumbLightbox img {
+  border: 1px solid #eee;
+  margin-bottom: 7px;
+}
+.infoLightbox {
+  font: 13px 'MyriadPro', helvetica, arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 200px;
+  height: 60px;
+  padding: 22px 0 0 0;
+  text-align: center;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+#designMask {
+  background: rgba(255, 255, 255, 0.8);
+  /*background-image: linear-gradient(to bottom, #ffffffcf,#fff);*/
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9000;
+}
+#materialMask {
+  background: rgba(255, 255, 255, 0.2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+#infoPopupMask {
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+}
+.hideThis {
+  display: none;
+}
+.greenNote {
+  position: absolute;
+  left: 25px;
+  bottom: 15px;
+  font-size: 10px;
+  z-index: 99999;
+  width: 530px;
+}
+.greenNote div{
+  margin-top: 5px;
+}
+.greenNote div p{
+  font-style: italic;
+}
+span.leafIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin: -3px -1px -3px 0;
+  background: url(../img/cab/leaf.png);
+}
+span.leafIconSmall {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  float: right;
+  margin: 0 0 0 2px;
+  background: url(../img/cab/leafSmall.png);
+}
+.dimSwitchOn, .dimSwitchOff {
+  width: 155px;
+  height: 25px;
+  line-height: 1.5em;
+  margin: auto;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+  background: url(../img/cab/dimSwitch.png) no-repeat 90px 0;
+}
+.dimSwitchOff {
+  background-position: 90px -25px;
+}
+#backlitBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 430px;
+  background: url(/img/cab/backlit.png);
+  z-index: 9998;
+}
+.finalizeCab {
+  position: absolute;
+  padding: 20px 100px;
+  font-size: 13px;
+  top: 38px;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  height: 598px;
+  background: #fff;
+  z-index: 9998;
+}
+.finalizeCab h1 {
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+.finalizeInput {
+  width: 100%;
+  margin-bottom: 7px;
+}
+.finalizeInput input, .finalizeInput select	{
+  float: left;
+}
+.finalizeInput label {
+  float: left;
+  width: 135px;
+  margin: 6px 0 0 20px;
+}
+.finalizeInput label span.required {
+  color: red;
+}
+.finalizeCab hr {
+  border: 0;
+  height: 1px;
+  margin: 10px 0;
+  background: #ddd;
+}
+.finalizeCab .buttonBar {
+  margin-top: 20px;
+  text-align: center;
+}
+.finalizeCab .estimateNote {
+  margin: 10px 60px 0 60px;
+  padding: 10px;
+  background: #f2f2f2;
+  text-align: center;
+  font-size: 11px;
+}
+/*== Launch Page ====================================*/
+
+#launchPage .container, #designerPage .container {
+  position: relative;
+  width: 960px;
+  margin: auto !important;
+  padding: 100px 20px 20px;
+  text-align: center;
+  font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+#launchPage .container h1, #designerPage .container h1 {
+  font: 24px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #4a6454;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#launchPage .container h2 {
+  font: 16px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #555;
+  margin: -5px 0 25px 0;
+  text-align: center;
+}
+#launchPage .container h2#cabTitle {
+  text-align: left;
+}
+#launchPage .container .leftSideLaunch {
+  float: left;
+  width: 500px;
+}
+#launchPage .container .rightSideLaunch {
+  float: right;
+  text-align: left;
+  width: 420px;
+}
+#launchPage .container .rightSideLaunch h2 {
+  font: 18px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #4a6454;
+  margin-bottom: 10px;
+}
+#designerPage .container .cabImg {
+  width: 200px;
+  display: inline-block;
+  margin: 15px 10px;
+  text-align: center;
+}
+#launchPage .container .cabImg {
+  float: left;
+  width: 150px;
+  margin: 0 15px 15px 0;
+  text-align: center;
+}
+#launchPage .container .cabImg h2, #designerPage .container .cabImg h2 {
+  font: 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #4a6454;
+  margin: 0;
+}
+#launchPage .container .cabImg img, #designerPage .container .cabImg img {
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+#launchPage .container .cabImg img.active {
+  -webkit-box-shadow: 0 0 5px #ff7d38;
+  -moz-box-shadow: 0 0 5px #ff7d38;
+  box-shadow: 0 0 5px #ff7d38;
+}
+#designerPage .container .cabImg img.noclicky {
+  cursor: default;
+}
+/*============================================== Cabs =====================================================*/
+/*==============================
+  Aurora
+==============================*/
+
+.auroraFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/aurora/frame.png);
+}
+.auroraLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/aurora/lights.png);
+}
+.auroraFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.auroraFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.auroraFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.auroraFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/aurora/highlight.png);
+}
+.auroraFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.auroraFrame .panelAHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 269px;
+  background-position: 0 -78px;
+}
+.auroraFrame .panelBHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 269px;
+  background-position: 0 -347px;
+}
+.auroraFrame .panelCHighlight {
+  top: 13px;
+  left: 0;
+  width: 341px;
+  height: 396px;
+  background-position: 0 -618px;
+}
+.auroraFrame .revealsHighlight {
+  top: 2px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  background-position: 0 -1014px;
+}
+.auroraFrame .handrailHighlight {
+  top: 260px;
+  left: 0;
+  width: 341px;
+  height: 16px;
+  z-index: 9999;
+  background-position: 0 -1443px;
+}
+.auroraFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.auroraFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.auroraFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.auroraFrame .panelTitle.panelA2 {
+  top: 295px;
+  left: 155px;
+}
+.auroraFrame .panelTitle.panelB1 {
+  top: 160px;
+  left: 77px;
+}
+.auroraFrame .panelTitle.panelB2 {
+  top: 160px;
+  right: 77px;
+}
+.auroraFrame .panelTitle.panelB3 {
+  top: 295px;
+  left: 77px;
+}
+.auroraFrame .panelTitle.panelB4 {
+  top: 295px;
+  right: 77px;
+}
+.auroraFrame .panelTitle.panelC1 {
+  top: 185px;
+  left: 15px;
+}
+.auroraFrame .panelTitle.panelC2 {
+  top: 185px;
+  right: 15px;
+}
+/*= Panels =*/
+
+.aurora-panelA {
+  width: 77px;
+  height: 269px;
+  position: absolute;
+  top: 82px;
+  left: 132px;
+  z-index: 9000;
+}
+.aurora-panelA-metal-decorative {
+  background: url(/img/cab/aurora/panels-metal-decorative-a.png);
+}
+.aurora-panelA-metal-mesh {
+  background: url(/img/cab/aurora/panels-metal-mesh-a.png);
+}
+.aurora-panelA-metal-sculpted {
+  background: url(/img/cab/aurora/panels-metal-sculpted-a.png);
+}
+.aurora-panelA-metal-bonded {
+  background: url(/img/cab/aurora/panels-metal-bonded-a.png);
+}
+.aurora-panelA-glass-mirror {
+  background: url(/img/cab/aurora/panels-glass-mirror-a.png);
+}
+.aurora-panelA-glass-solid {
+  background: url(/img/cab/aurora/panels-glass-solid-a.png);
+}
+.aurora-panelA-glass-metallic {
+  background: url(/img/cab/aurora/panels-glass-metallic-a.png);
+}
+.aurora-panelA-stone {
+  background: url(/img/cab/aurora/panels-stone-a.png);
+}
+.aurora-panelA-resin-pattern {
+  background: url(/img/cab/aurora/panels-resin-pattern-a.png);
+}
+.aurora-panelA-resin-solid {
+  background: url(/img/cab/aurora/panels-resin-solid-a.png);
+}
+.aurora-panelA-resin-stone {
+  background: url(/img/cab/aurora/panels-resin-stone-a.png);
+}
+.aurora-panelA-laminate-solid {
+  background: url(/img/cab/aurora/panels-laminate-solid-a.png);
+}
+.aurora-panelA-laminate-textured {
+  background: url(/img/cab/aurora/panels-laminate-textured-a.png);
+}
+.aurora-panelA-laminate-pattern {
+  background: url(/img/cab/aurora/panels-laminate-pattern-a.png);
+}
+.aurora-panelA-laminate-wood {
+  background: url(/img/cab/aurora/panels-laminate-wood-a.png);
+}
+.aurora-panelA-wood {
+  background: url(/img/cab/aurora/panels-wood-a.png);
+}
+.aurora-panelA-textiles {
+  background: url(/img/cab/aurora/panels-textiles-a.png);
+}
+.aurora-panelB {
+  width: 233px;
+  height: 269px;
+  position: absolute;
+  top: 82px;
+  left: 54px;
+  z-index: 9000;
+}
+.aurora-panelB-metal-bonded {
+  background: url(/img/cab/aurora/panels-metal-bonded-b.png);
+}
+.aurora-panelB-metal-sculpted {
+  background: url(/img/cab/aurora/panels-metal-sculpted-b.png);
+}
+.aurora-panelB-metal-mesh {
+  background: url(/img/cab/aurora/panels-metal-mesh-b.png);
+}
+.aurora-panelB-metal-decorative {
+  background: url(/img/cab/aurora/panels-metal-decorative-b.png);
+}
+.aurora-panelB-laminate-solid {
+  background: url(/img/cab/aurora/panels-laminate-solid-b.png);
+}
+.aurora-panelB-laminate-textured {
+  background: url(/img/cab/aurora/panels-laminate-textured-b.png);
+}
+.aurora-panelB-laminate-pattern {
+  background: url(/img/cab/aurora/panels-laminate-pattern-b.png);
+}
+.aurora-panelB-laminate-wood {
+  background: url(/img/cab/aurora/panels-laminate-wood-b.png);
+}
+.aurora-panelB-glass-mirror {
+  background: url(/img/cab/aurora/panels-glass-mirror-b.png);
+}
+.aurora-panelB-glass-solid {
+  background: url(/img/cab/aurora/panels-glass-solid-b.png);
+}
+.aurora-panelB-glass-metallic {
+  background: url(/img/cab/aurora/panels-glass-metallic-b.png);
+}
+.aurora-panelB-resin-pattern {
+  background: url(/img/cab/aurora/panels-resin-pattern-b.png);
+}
+.aurora-panelB-resin-solid {
+  background: url(/img/cab/aurora/panels-resin-solid-b.png);
+}
+.aurora-panelB-resin-stone {
+  background: url(/img/cab/aurora/panels-resin-stone-b.png);
+}
+.aurora-panelB-stone {
+  background: url(/img/cab/aurora/panels-stone-b.png);
+}
+.aurora-panelB-textiles {
+  background: url(/img/cab/aurora/panels-textiles-b.png);
+}
+.aurora-panelB-wood {
+  background: url(/img/cab/aurora/panels-wood-b.png);
+}
+.aurora-panelC {
+  width: 341px;
+  height: 396px;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  z-index: 9000;
+}
+.aurora-panelC-metal-decorative {
+  background: url(/img/cab/aurora/panels-metal-decorative-c.png);
+}
+.aurora-panelC-metal-bonded {
+  background: url(/img/cab/aurora/panels-metal-bonded-c.png);
+}
+.aurora-panelC-metal-sculpted {
+  background: url(/img/cab/aurora/panels-metal-sculpted-c.png);
+}
+.aurora-panelC-metal-mesh {
+  background: url(/img/cab/aurora/panels-metal-mesh-c.png);
+}
+.aurora-panelC-laminate-solid {
+  background: url(/img/cab/aurora/panels-laminate-solid-c.png);
+}
+.aurora-panelC-laminate-textured {
+  background: url(/img/cab/aurora/panels-laminate-textured-c.png);
+}
+.aurora-panelC-laminate-pattern {
+  background: url(/img/cab/aurora/panels-laminate-pattern-c.png);
+}
+.aurora-panelC-laminate-wood {
+  background: url(/img/cab/aurora/panels-laminate-wood-c.png);
+}
+.aurora-panelC-glass-mirror {
+  background: url(/img/cab/aurora/panels-glass-mirror-c.png);
+}
+.aurora-panelC-glass-solid {
+  background: url(/img/cab/aurora/panels-glass-solid-c.png);
+}
+.aurora-panelC-glass-metallic {
+  background: url(/img/cab/aurora/panels-glass-metallic-c.png);
+}
+.aurora-panelC-resin-pattern {
+  background: url(/img/cab/aurora/panels-resin-pattern-c.png);
+}
+.aurora-panelC-resin-solid {
+  background: url(/img/cab/aurora/panels-resin-solid-c.png);
+}
+.aurora-panelC-resin-stone {
+  background: url(/img/cab/aurora/panels-resin-stone-c.png);
+}
+.aurora-panelC-stone {
+  background: url(/img/cab/aurora/panels-stone-c.png);
+}
+.aurora-panelC-textiles {
+  background: url(/img/cab/aurora/panels-textiles-c.png);
+}
+.aurora-panelC-wood {
+  background: url(/img/cab/aurora/panels-wood-c.png);
+}
+/*= Trim =*/
+
+.aurora-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/aurora/reveals.png);
+}
+/*= Handrails =*/
+
+.aurora-handrails {
+  position: absolute;
+  top: 260px;
+  left: 54px;
+  width: 233px;
+  height: 35px;
+  z-index: 9900;
+}
+.aurora-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/aurora-flat-finite.png);
+}
+.aurora-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/aurora-flat-infinity.png);
+}
+.aurora-handrails-beam {
+  background-image: url(/img/cab/handrails/aurora-beam.png);
+}
+.aurora-handrails-capsule {
+  background-image: url(/img/cab/handrails/aurora-capsule.png);
+}
+.aurora-handrails-round-finite {
+  background-image: url(/img/cab/handrails/aurora-round-finite.png);
+}
+.aurora-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/aurora-round-infinity.png);
+}
+/*==============================
+  Aurora Glow
+==============================*/
+
+.aurora-glowFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/aurora-glow/frame.png);
+}
+.aurora-glowLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/aurora-glow/lights.png);
+}
+.aurora-glowFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.aurora-glowFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.aurora-glowFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.aurora-glowFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/aurora-glow/highlight.png);
+}
+.aurora-glowFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.aurora-glowFrame .panelAHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 269px;
+  background-position: 0 -78px;
+}
+.aurora-glowFrame .panelBHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 269px;
+  background-position: 0 -347px;
+}
+.aurora-glowFrame .panelCHighlight {
+  top: 13px;
+  left: 0;
+  width: 341px;
+  height: 396px;
+  background-position: 0 -618px;
+}
+.aurora-glowFrame .revealsHighlight {
+  top: 2px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  background-position: 0 -1014px;
+}
+.aurora-glowFrame .handrailHighlight {
+  top: 260px;
+  left: 0;
+  width: 341px;
+  height: 16px;
+  z-index: 9999;
+  background-position: 0 -1443px;
+}
+.aurora-glowFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.aurora-glowFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.aurora-glowFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.aurora-glowFrame .panelTitle.panelA2 {
+  top: 295px;
+  left: 155px;
+}
+.aurora-glowFrame .panelTitle.panelB1 {
+  top: 160px;
+  left: 77px;
+}
+.aurora-glowFrame .panelTitle.panelB2 {
+  top: 160px;
+  right: 77px;
+}
+.aurora-glowFrame .panelTitle.panelB3 {
+  top: 295px;
+  left: 77px;
+}
+.aurora-glowFrame .panelTitle.panelB4 {
+  top: 295px;
+  right: 77px;
+}
+.aurora-glowFrame .panelTitle.panelC1 {
+  top: 185px;
+  left: 15px;
+}
+.aurora-glowFrame .panelTitle.panelC2 {
+  top: 185px;
+  right: 15px;
+}
+/*= Panels =*/
+
+.aurora-glow-panelA {
+  width: 341px;
+  height: 430px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.aurora-glow-panelA-backlit-resin {
+  background: url(/img/cab/aurora-glow/panels-backlit-resin-a.png);
+}
+.aurora-glow-panelA-backlit-glass {
+  background: url(/img/cab/aurora-glow/panels-backlit-glass-a.png);
+}
+.aurora-glow-panelB {
+  width: 233px;
+  height: 269px;
+  position: absolute;
+  top: 82px;
+  left: 54px;
+  z-index: 9000;
+}
+.aurora-glow-panelB-metal-bonded {
+  background: url(/img/cab/aurora-glow/panels-metal-bonded-b.png);
+}
+.aurora-glow-panelB-metal-sculpted {
+  background: url(/img/cab/aurora-glow/panels-metal-sculpted-b.png);
+}
+.aurora-glow-panelB-metal-mesh {
+  background: url(/img/cab/aurora-glow/panels-metal-mesh-b.png);
+}
+.aurora-glow-panelB-metal-decorative {
+  background: url(/img/cab/aurora-glow/panels-metal-decorative-b.png);
+}
+.aurora-glow-panelB-laminate-solid {
+  background: url(/img/cab/aurora-glow/panels-laminate-solid-b.png);
+}
+.aurora-glow-panelB-laminate-textured {
+  background: url(/img/cab/aurora-glow/panels-laminate-textured-b.png);
+}
+.aurora-glow-panelB-laminate-pattern {
+  background: url(/img/cab/aurora-glow/panels-laminate-pattern-b.png);
+}
+.aurora-glow-panelB-laminate-wood {
+  background: url(/img/cab/aurora-glow/panels-laminate-wood-b.png);
+}
+.aurora-glow-panelB-glass-mirror {
+  background: url(/img/cab/aurora-glow/panels-glass-mirror-b.png);
+}
+.aurora-glow-panelB-glass-solid {
+  background: url(/img/cab/aurora-glow/panels-glass-solid-b.png);
+}
+.aurora-glow-panelB-glass-metallic {
+  background: url(/img/cab/aurora-glow/panels-glass-metallic-b.png);
+}
+.aurora-glow-panelB-resin-pattern {
+  background: url(/img/cab/aurora-glow/panels-resin-pattern-b.png);
+}
+.aurora-glow-panelB-resin-solid {
+  background: url(/img/cab/aurora-glow/panels-resin-solid-b.png);
+}
+.aurora-glow-panelB-resin-stone {
+  background: url(/img/cab/aurora-glow/panels-resin-stone-b.png);
+}
+.aurora-glow-panelB-stone {
+  background: url(/img/cab/aurora-glow/panels-stone-b.png);
+}
+.aurora-glow-panelB-textiles {
+  background: url(/img/cab/aurora-glow/panels-textiles-b.png);
+}
+.aurora-glow-panelB-wood {
+  background: url(/img/cab/aurora-glow/panels-wood-b.png);
+}
+.aurora-glow-panelC {
+  width: 341px;
+  height: 396px;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  z-index: 9000;
+}
+.aurora-glow-panelC-metal-decorative {
+  background: url(/img/cab/aurora-glow/panels-metal-decorative-c.png);
+}
+.aurora-glow-panelC-metal-bonded {
+  background: url(/img/cab/aurora-glow/panels-metal-bonded-c.png);
+}
+.aurora-glow-panelC-metal-sculpted {
+  background: url(/img/cab/aurora-glow/panels-metal-sculpted-c.png);
+}
+.aurora-glow-panelC-metal-mesh {
+  background: url(/img/cab/aurora-glow/panels-metal-mesh-c.png);
+}
+.aurora-glow-panelC-laminate-solid {
+  background: url(/img/cab/aurora-glow/panels-laminate-solid-c.png);
+}
+.aurora-glow-panelC-laminate-textured {
+  background: url(/img/cab/aurora-glow/panels-laminate-textured-c.png);
+}
+.aurora-glow-panelC-laminate-pattern {
+  background: url(/img/cab/aurora-glow/panels-laminate-pattern-c.png);
+}
+.aurora-glow-panelC-laminate-wood {
+  background: url(/img/cab/aurora-glow/panels-laminate-wood-c.png);
+}
+.aurora-glow-panelC-glass-mirror {
+  background: url(/img/cab/aurora-glow/panels-glass-mirror-c.png);
+}
+.aurora-glow-panelC-glass-solid {
+  background: url(/img/cab/aurora-glow/panels-glass-solid-c.png);
+}
+.aurora-glow-panelC-glass-metallic {
+  background: url(/img/cab/aurora-glow/panels-glass-metallic-c.png);
+}
+.aurora-glow-panelC-resin-pattern {
+  background: url(/img/cab/aurora-glow/panels-resin-pattern-c.png);
+}
+.aurora-glow-panelC-resin-solid {
+  background: url(/img/cab/aurora-glow/panels-resin-solid-c.png);
+}
+.aurora-glow-panelC-resin-stone {
+  background: url(/img/cab/aurora-glow/panels-resin-stone-c.png);
+}
+.aurora-glow-panelC-stone {
+  background: url(/img/cab/aurora-glow/panels-stone-c.png);
+}
+.aurora-glow-panelC-textiles {
+  background: url(/img/cab/aurora-glow/panels-textiles-c.png);
+}
+.aurora-glow-panelC-wood {
+  background: url(/img/cab/aurora-glow/panels-wood-c.png);
+}
+/*= Trim =*/
+
+.aurora-glow-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/aurora-glow/reveals.png);
+}
+/*= Handrails =*/
+
+.aurora-glow-handrails {
+  position: absolute;
+  top: 260px;
+  left: 54px;
+  width: 233px;
+  height: 35px;
+  z-index: 9900;
+}
+.aurora-glow-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/aurora-glow-flat-finite.png);
+}
+.aurora-glow-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/aurora-glow-flat-infinity.png);
+}
+.aurora-glow-handrails-beam {
+  background-image: url(/img/cab/handrails/aurora-glow-beam.png);
+}
+.aurora-glow-handrails-capsule {
+  background-image: url(/img/cab/handrails/aurora-glow-capsule.png);
+}
+.aurora-glow-handrails-round-finite {
+  background-image: url(/img/cab/handrails/aurora-glow-round-finite.png);
+}
+.aurora-glow-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/aurora-glow-round-infinity.png);
+}
+/*==============================
+  Endeavor
+==============================*/
+
+.endeavorFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/endeavor/frame.png);
+}
+.endeavorLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 94px;
+  z-index: 9850;
+  background: url(/img/cab/endeavor/lights.png);
+}
+.endeavorFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 94px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.endeavorFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.endeavorFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.endeavorFrame #bumperSelect {
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  width: 341px;
+  height: 87px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.endeavorFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/endeavor/highlight.png);
+}
+.endeavorFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 94px;
+  background-position: 0 0;
+}
+.endeavorFrame .panelAHighlight {
+  top: 99px;
+  left: 0;
+  width: 341px;
+  height: 238px;
+  background-position: 0 -95px;
+}
+.endeavorFrame .panelBHighlight {
+  top: 14px;
+  left: 0;
+  width: 341px;
+  height: 393px;
+  background-position: 0 -333px;
+}
+
+.endeavorFrame .revealsHighlight {
+  top: 3px;
+  height: 426px;
+  left: 0;
+  width: 341px;
+  background-position: 0 -727px;
+}
+.endeavorFrame .handrailHighlight {
+  top: 265px;
+  left: 0;
+  width: 341px;
+  height: 25px;
+  z-index: 9999;
+  background-position: 0 -1155px;
+}
+.endeavorFrame .bumperHighlight {
+  bottom: 23px;
+  left: 0;
+  width: 341px;
+  height: 87px;
+  z-index: 9999;
+  background-position: 0 -1180px;
+}
+.endeavorFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.endeavorFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.endeavorFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.endeavorFrame .panelTitle.panelA2 {
+  top: 285px;
+  left: 155px;
+}
+.endeavorFrame .panelTitle.panelB1 {
+  top: 295px;
+  right: 26px;
+}
+.endeavorFrame .panelTitle.panelB2 {
+  top: 165px;
+  left: 26px;
+}
+.endeavorFrame .panelTitle.panelB3 {
+  top: 165px;
+  right: 26px;
+}
+.endeavorFrame .panelTitle.panelB4 {
+  top: 300px;
+  left: 26px;
+}
+/*= Panels =*/
+
+.endeavor-panelA {
+  width: 209px;
+  height: 238px;
+  position: absolute;
+  top: 99px;
+  left: 66px;
+  z-index: 9000;
+}
+.endeavor-panelA-metal-decorative {
+  background: url(/img/cab/endeavor/panels-metal-decorative-a.png);
+}
+.endeavor-panelA-laminate-solid {
+  background: url(/img/cab/endeavor/panels-laminate-solid-a.png);
+}
+.endeavor-panelA-laminate-textured {
+  background: url(/img/cab/endeavor/panels-laminate-textured-a.png);
+}
+.endeavor-panelA-laminate-pattern {
+  background: url(/img/cab/endeavor/panels-laminate-pattern-a.png);
+}
+.endeavor-panelA-laminate-wood {
+  background: url(/img/cab/endeavor/panels-laminate-wood-a.png);
+}
+.endeavor-panelB {
+  width: 341px;
+  height: 393px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: 9000;
+}
+.endeavor-panelB-metal-decorative {
+  background: url(/img/cab/endeavor/panels-metal-decorative-b.png);
+}
+.endeavor-panelB-laminate-solid {
+  background: url(/img/cab/endeavor/panels-laminate-solid-b.png);
+}
+.endeavor-panelB-laminate-textured {
+  background: url(/img/cab/endeavor/panels-laminate-textured-b.png);
+}
+.endeavor-panelB-laminate-pattern {
+  background: url(/img/cab/endeavor/panels-laminate-pattern-b.png);
+}
+.endeavor-panelB-laminate-wood {
+  background: url(/img/cab/endeavor/panels-laminate-wood-b.png);
+}
+/*= Trim =*/
+
+.endeavor-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/endeavor/reveals.png);
+}
+/*= Handrails =*/
+
+.endeavor-handrails {
+  position: absolute;
+  top: 261px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.endeavor-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/endeavor-flat-finite.png);
+}
+.endeavor-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/endeavor-flat-infinity.png);
+}
+.endeavor-handrails-beam {
+  background-image: url(/img/cab/handrails/endeavor-beam.png);
+}
+.endeavor-handrails-round-finite {
+  background-image: url(/img/cab/handrails/endeavor-round-finite.png);
+}
+.endeavor-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/endeavor-round-infinity.png);
+}
+/*= Ceilings =*/
+
+.endeavorFrame .ceilings-radiant-diffuser {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 165px;
+  z-index: 9900;
+  background: url(/img/cab/ceilings/freight-radiant-diffuser.png);
+}
+.endeavorFrame .ceilings-classic-nine {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 165px;
+  z-index: 9900;
+  background: url(/img/cab/ceilings/freight-classic-nine.png);
+}
+/*= Bumpers =*/
+
+.endeavorFrame .endeavor-bumpers {
+	position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 341px;
+  height: 121px;
+  z-index: 9990;
+  background: url(/img/cab/handrails/bumper.png);
+}
+/*==============================
+  Gallery
+==============================*/
+
+.galleryFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/gallery/frame.png);
+}
+.galleryLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/gallery/lights.png);
+}
+.galleryFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.galleryFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.galleryFrame #panelsSelect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 341px;
+  height: 420px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.galleryFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/gallery/highlight.png);
+}
+.galleryFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.galleryFrame .panelAHighlight {
+  top: 67px;
+	left: 0;
+	width: 341px;
+	height: 305px;
+	background-position: 0 -77px;
+}
+.galleryFrame .panelBHighlight {
+  top: 12px;
+  left: 0;
+  width: 341px;
+  height: 271px;
+  background-position: 0 -383px;
+}
+.galleryFrame .panelCHighlight {
+  top: 277px;
+	left: 0;
+	width: 341px;
+	height: 142px;
+	background-position: 0 -654px;
+}
+.galleryFrame .revealsHighlight {
+  top: 3px;
+	left: 0;
+	width: 341px;
+	height: 427px;
+	background-position: 0 -795px;
+}
+.galleryFrame .handrailHighlight {
+  top: 263px;
+	left: 0;
+	width: 341px;
+	height: 34px;
+	z-index: 9999;
+	background-position: 0 -1219px;
+}
+.galleryFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.galleryFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.galleryFrame .panelTitle.panelA1 {
+  top: 205px;
+  left: 155px;
+}
+.galleryFrame .panelTitle.panelB1 {
+  top: 150px;
+  left: 8px;
+}
+.galleryFrame .panelTitle.panelB2 {
+  top: 150px;
+  right: 8px;
+}
+.galleryFrame .panelTitle.panelC1 {
+  top: 320px;
+  left: 8px;
+}
+.galleryFrame .panelTitle.panelC2 {
+  top: 320px;
+  right: 8px;
+}
+/*= Panels =*/
+
+.gallery-panelA {
+  width: 257px;
+	height: 305px;
+	position: absolute;
+	top: 67px;
+	left: 42px;
+	z-index: 9000;
+}
+.gallery-panelA-glass {
+  background: url(/img/cab/gallery/panels-glass-a.png);
+}
+.gallery-panelB {
+  width: 341px;
+  height: 271px;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  z-index: 9000;
+}
+.gallery-panelB-metal-bonded {
+  background: url(/img/cab/gallery/panels-metal-bonded-b.png);
+}
+.gallery-panelB-metal-sculpted {
+  background: url(/img/cab/gallery/panels-metal-sculpted-b.png);
+}
+.gallery-panelB-metal-mesh {
+  background: url(/img/cab/gallery/panels-metal-mesh-b.png);
+}
+.gallery-panelB-metal-decorative {
+  background: url(/img/cab/gallery/panels-metal-decorative-b.png);
+}
+.gallery-panelB-laminate-solid {
+  background: url(/img/cab/gallery/panels-laminate-solid-b.png);
+}
+.gallery-panelB-laminate-textured {
+  background: url(/img/cab/gallery/panels-laminate-textured-b.png);
+}
+.gallery-panelB-laminate-pattern {
+  background: url(/img/cab/gallery/panels-laminate-pattern-b.png);
+}
+.gallery-panelB-laminate-wood {
+  background: url(/img/cab/gallery/panels-laminate-wood-b.png);
+}
+.gallery-panelB-glass-mirror {
+  background: url(/img/cab/gallery/panels-glass-mirror-b.png);
+}
+.gallery-panelB-glass-solid {
+  background: url(/img/cab/gallery/panels-glass-solid-b.png);
+}
+.gallery-panelB-glass-metallic {
+  background: url(/img/cab/gallery/panels-glass-metallic-b.png);
+}
+.gallery-panelB-resin-pattern {
+  background: url(/img/cab/gallery/panels-resin-pattern-b.png);
+}
+.gallery-panelB-resin-solid {
+  background: url(/img/cab/gallery/panels-resin-solid-b.png);
+}
+.gallery-panelB-resin-stone {
+  background: url(/img/cab/gallery/panels-resin-stone-b.png);
+}
+.gallery-panelB-stone {
+  background: url(/img/cab/gallery/panels-stone-b.png);
+}
+.gallery-panelB-textiles {
+  background: url(/img/cab/gallery/panels-textiles-b.png);
+}
+.gallery-panelB-wood {
+  background: url(/img/cab/gallery/panels-wood-b.png);
+}
+.gallery-panelC {
+  width: 341px;
+  height: 142px;
+  position: absolute;
+  top: 278px;
+  left: 0;
+  z-index: 9000;
+}
+.gallery-panelC-metal-decorative {
+  background: url(/img/cab/gallery/panels-metal-decorative-c.png);
+}
+.gallery-panelC-metal-bonded {
+  background: url(/img/cab/gallery/panels-metal-bonded-c.png);
+}
+.gallery-panelC-metal-sculpted {
+  background: url(/img/cab/gallery/panels-metal-sculpted-c.png);
+}
+.gallery-panelC-metal-mesh {
+  background: url(/img/cab/gallery/panels-metal-mesh-c.png);
+}
+.gallery-panelC-laminate-solid {
+  background: url(/img/cab/gallery/panels-laminate-solid-c.png);
+}
+.gallery-panelC-laminate-textured {
+  background: url(/img/cab/gallery/panels-laminate-textured-c.png);
+}
+.gallery-panelC-laminate-pattern {
+  background: url(/img/cab/gallery/panels-laminate-pattern-c.png);
+}
+.gallery-panelC-laminate-wood {
+  background: url(/img/cab/gallery/panels-laminate-wood-c.png);
+}
+.gallery-panelC-glass-mirror {
+  background: url(/img/cab/gallery/panels-glass-mirror-c.png);
+}
+.gallery-panelC-glass-solid {
+  background: url(/img/cab/gallery/panels-glass-solid-c.png);
+}
+.gallery-panelC-glass-metallic {
+  background: url(/img/cab/gallery/panels-glass-metallic-c.png);
+}
+.gallery-panelC-resin-pattern {
+  background: url(/img/cab/gallery/panels-resin-pattern-c.png);
+}
+.gallery-panelC-resin-solid {
+  background: url(/img/cab/gallery/panels-resin-solid-c.png);
+}
+.gallery-panelC-resin-stone {
+  background: url(/img/cab/gallery/panels-resin-stone-c.png);
+}
+.gallery-panelC-stone {
+  background: url(/img/cab/gallery/panels-stone-c.png);
+}
+.gallery-panelC-textiles {
+  background: url(/img/cab/gallery/panels-textiles-c.png);
+}
+.gallery-panelC-wood {
+  background: url(/img/cab/gallery/panels-wood-c.png);
+}
+/*= Trim =*/
+
+.gallery-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/gallery/reveals.png);
+}
+/*= Handrails =*/
+
+.gallery-handrails {
+  position: absolute;
+  top: 264px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.gallery-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/gallery-flat-finite.png);
+}
+.gallery-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/gallery-flat-infinity.png);
+}
+.gallery-handrails-beam {
+  background-image: url(/img/cab/handrails/gallery-beam.png);
+}
+.gallery-handrails-capsule {
+  background-image: url(/img/cab/handrails/gallery-capsule.png);
+}
+.gallery-handrails-round-finite {
+  background-image: url(/img/cab/handrails/gallery-round-finite.png);
+}
+.gallery-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/gallery-round-infinity.png);
+}
+/*==============================
+  Inertia
+==============================*/
+
+.inertiaFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/inertia/frame.png);
+}
+.inertiaLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/inertia/lights.png);
+}
+.inertiaFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.inertiaFrame #handrailsSelect {
+  position: absolute;
+  top: 261px;
+  left: 54px;
+  width: 233px;
+  height: 15px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.inertiaFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.inertiaFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/inertia/highlight.png);
+}
+.inertiaFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.inertiaFrame .panelAHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 179px;
+  background-position: 0 -78px;
+}
+.inertiaFrame .panelBHighlight {
+  top: 274px;
+  left: 0;
+  width: 341px;
+  height: 76px;
+  background-position: 0 -256px;
+}
+.inertiaFrame .panelCHighlight {
+  top: 14px;
+  left: 0;
+  width: 341px;
+  height: 395px;
+  background-position: 0 -335px;
+}
+.inertiaFrame .panelDHighlight {
+  top: 15px;
+  right: -1px;
+  width: 341px;
+  height: 260px;
+  background-position: 0 -730px;
+}
+.inertiaFrame .panelEHighlight {
+  top: 275px;
+  right: 0;
+  width: 341px;
+  height: 133px;
+  background-position: 0 -990px;
+}
+.inertiaFrame .revealsHighlight {
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 425px;
+  background-position: 0 -1123px;
+}
+.inertiaFrame .handrailHighlight {
+  top: 258px;
+  left: 0;
+  width: 341px;
+  height: 40px;
+  z-index: 9999;
+  background-position: 0 -3140px;
+}
+.inertiaFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.inertiaFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.inertiaFrame .panelTitle.panelA1 {
+  top: 152px;
+  left: 87px;
+}
+.inertiaFrame .panelTitle.panelB1 {
+  top: 288px;
+  left: 88px;
+}
+.inertiaFrame .panelTitle.panelC1 {
+  top: 195px;
+  left: -5px;
+}
+.inertiaFrame .panelTitle.panelC2 {
+  top: 195px;
+  right: 63px;
+}
+.inertiaFrame .panelTitle.panelC3 {
+  top: 195px;
+  right: 31px;
+}
+.inertiaFrame .panelTitle.panelD1 {
+  top: 150px;
+  left: 25px;
+}
+.inertiaFrame .panelTitle.panelD2 {
+  top: 140px;
+  right: 5px;
+}
+.inertiaFrame .panelTitle.panelE1 {
+  top: 300px;
+  left: 26px;
+}
+.inertiaFrame .panelTitle.panelE2 {
+  top: 315px;
+  right: 6px;
+}
+/*= Panels =*/
+
+.inertia-panelA {
+  width: 183px;
+  height: 179px;
+  position: absolute;
+  top: 82px;
+  left: 55px;
+  z-index: 9000;
+}
+.inertia-panelA-metal-decorative {
+  background: url(/img/cab/inertia/panels-metal-decorative-a.png);
+}
+.inertia-panelA-metal-mesh {
+  background: url(/img/cab/inertia/panels-metal-mesh-a.png);
+}
+.inertia-panelA-metal-sculpted {
+  background: url(/img/cab/inertia/panels-metal-sculpted-a.png);
+}
+.inertia-panelA-metal-bonded {
+  background: url(/img/cab/inertia/panels-metal-bonded-a.png);
+}
+.inertia-panelA-glass-mirror {
+  background: url(/img/cab/inertia/panels-glass-mirror-a.png);
+}
+.inertia-panelA-glass-solid {
+  background: url(/img/cab/inertia/panels-glass-solid-a.png);
+}
+.inertia-panelA-glass-metallic {
+  background: url(/img/cab/inertia/panels-glass-metallic-a.png);
+}
+.inertia-panelA-stone {
+  background: url(/img/cab/inertia/panels-stone-a.png);
+}
+.inertia-panelA-resin-pattern {
+  background: url(/img/cab/inertia/panels-resin-pattern-a.png);
+}
+.inertia-panelA-resin-solid {
+  background: url(/img/cab/inertia/panels-resin-solid-a.png);
+}
+.inertia-panelA-resin-stone {
+  background: url(/img/cab/inertia/panels-resin-stone-a.png);
+}
+.inertia-panelA-laminate-solid {
+  background: url(/img/cab/inertia/panels-laminate-solid-a.png);
+}
+.inertia-panelA-laminate-textured {
+  background: url(/img/cab/inertia/panels-laminate-textured-a.png);
+}
+.inertia-panelA-laminate-pattern {
+  background: url(/img/cab/inertia/panels-laminate-pattern-a.png);
+}
+.inertia-panelA-laminate-wood {
+  background: url(/img/cab/inertia/panels-laminate-wood-a.png);
+}
+.inertia-panelA-wood {
+  background: url(/img/cab/inertia/panels-wood-a.png);
+}
+.inertia-panelA-textiles {
+  background: url(/img/cab/inertia/panels-textiles-a.png);
+}
+.inertia-panelB {
+  width: 183px;
+  height: 76px;
+  position: absolute;
+  top: 275px;
+  left: 55px;
+  z-index: 9000;
+}
+.inertia-panelB-metal-bonded {
+  background: url(/img/cab/inertia/panels-metal-bonded-b.png);
+}
+.inertia-panelB-metal-sculpted {
+  background: url(/img/cab/inertia/panels-metal-sculpted-b.png);
+}
+.inertia-panelB-metal-mesh {
+  background: url(/img/cab/inertia/panels-metal-mesh-b.png);
+}
+.inertia-panelB-metal-decorative {
+  background: url(/img/cab/inertia/panels-metal-decorative-b.png);
+}
+.inertia-panelB-laminate-solid {
+  background: url(/img/cab/inertia/panels-laminate-solid-b.png);
+}
+.inertia-panelB-laminate-textured {
+  background: url(/img/cab/inertia/panels-laminate-textured-b.png);
+}
+.inertia-panelB-laminate-pattern {
+  background: url(/img/cab/inertia/panels-laminate-pattern-b.png);
+}
+.inertia-panelB-laminate-wood {
+  background: url(/img/cab/inertia/panels-laminate-wood-b.png);
+}
+.inertia-panelB-glass-mirror {
+  background: url(/img/cab/inertia/panels-glass-mirror-b.png);
+}
+.inertia-panelB-glass-solid {
+  background: url(/img/cab/inertia/panels-glass-solid-b.png);
+}
+.inertia-panelB-glass-metallic {
+  background: url(/img/cab/inertia/panels-glass-metallic-b.png);
+}
+.inertia-panelB-resin-pattern {
+  background: url(/img/cab/inertia/panels-resin-pattern-b.png);
+}
+.inertia-panelB-resin-solid {
+  background: url(/img/cab/inertia/panels-resin-solid-b.png);
+}
+.inertia-panelB-resin-stone {
+  background: url(/img/cab/inertia/panels-resin-stone-b.png);
+}
+.inertia-panelB-stone {
+  background: url(/img/cab/inertia/panels-stone-b.png);
+}
+.inertia-panelB-textiles {
+  background: url(/img/cab/inertia/panels-textiles-b.png);
+}
+.inertia-panelB-wood {
+  background: url(/img/cab/inertia/panels-wood-b.png);
+}
+.inertia-panelC {
+  width: 300px;
+  height: 395px;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  z-index: 9000;
+}
+.inertia-panelC-metal-decorative {
+  background: url(/img/cab/inertia/panels-metal-decorative-c.png);
+}
+.inertia-panelC-metal-bonded {
+  background: url(/img/cab/inertia/panels-metal-bonded-c.png);
+}
+.inertia-panelC-metal-sculpted {
+  background: url(/img/cab/inertia/panels-metal-sculpted-c.png);
+}
+.inertia-panelC-metal-mesh {
+  background: url(/img/cab/inertia/panels-metal-mesh-c.png);
+}
+.inertia-panelC-laminate-solid {
+  background: url(/img/cab/inertia/panels-laminate-solid-c.png);
+}
+.inertia-panelC-laminate-textured {
+  background: url(/img/cab/inertia/panels-laminate-textured-c.png);
+}
+.inertia-panelC-laminate-pattern {
+  background: url(/img/cab/inertia/panels-laminate-pattern-c.png);
+}
+.inertia-panelC-laminate-wood {
+  background: url(/img/cab/inertia/panels-laminate-wood-c.png);
+}
+.inertia-panelC-glass-mirror {
+  background: url(/img/cab/inertia/panels-glass-mirror-c.png);
+}
+.inertia-panelC-glass-solid {
+  background: url(/img/cab/inertia/panels-glass-solid-c.png);
+}
+.inertia-panelC-glass-metallic {
+  background: url(/img/cab/inertia/panels-glass-metallic-c.png);
+}
+.inertia-panelC-resin-pattern {
+  background: url(/img/cab/inertia/panels-resin-pattern-c.png);
+}
+.inertia-panelC-resin-solid {
+  background: url(/img/cab/inertia/panels-resin-solid-c.png);
+}
+.inertia-panelC-resin-stone {
+  background: url(/img/cab/inertia/panels-resin-stone-c.png);
+}
+.inertia-panelC-stone {
+  background: url(/img/cab/inertia/panels-stone-c.png);
+}
+.inertia-panelC-textiles {
+  background: url(/img/cab/inertia/panels-textiles-c.png);
+}
+.inertia-panelC-wood {
+  background: url(/img/cab/inertia/panels-wood-c.png);
+}
+.inertia-panelD {
+  width: 320px;
+  height: 260px;
+  position: absolute;
+  top: 14px;
+  right: 0;
+  z-index: 9000;
+}
+.inertia-panelD-metal-decorative {
+  background: url(/img/cab/inertia/panels-metal-decorative-d.png);
+}
+.inertia-panelD-metal-bonded {
+  background: url(/img/cab/inertia/panels-metal-bonded-d.png);
+}
+.inertia-panelD-metal-sculpted {
+  background: url(/img/cab/inertia/panels-metal-sculpted-d.png);
+}
+.inertia-panelD-metal-mesh {
+  background: url(/img/cab/inertia/panels-metal-mesh-d.png);
+}
+.inertia-panelD-laminate-solid {
+  background: url(/img/cab/inertia/panels-laminate-solid-d.png);
+}
+.inertia-panelD-laminate-textured {
+  background: url(/img/cab/inertia/panels-laminate-textured-d.png);
+}
+.inertia-panelD-laminate-pattern {
+  background: url(/img/cab/inertia/panels-laminate-pattern-d.png);
+}
+.inertia-panelD-laminate-wood {
+  background: url(/img/cab/inertia/panels-laminate-wood-d.png);
+}
+.inertia-panelD-glass-mirror {
+  background: url(/img/cab/inertia/panels-glass-mirror-d.png);
+}
+.inertia-panelD-glass-solid {
+  background: url(/img/cab/inertia/panels-glass-solid-d.png);
+}
+.inertia-panelD-glass-metallic {
+  background: url(/img/cab/inertia/panels-glass-metallic-d.png);
+}
+.inertia-panelD-resin-pattern {
+  background: url(/img/cab/inertia/panels-resin-pattern-d.png);
+}
+.inertia-panelD-resin-solid {
+  background: url(/img/cab/inertia/panels-resin-solid-d.png);
+}
+.inertia-panelD-resin-stone {
+  background: url(/img/cab/inertia/panels-resin-stone-d.png);
+}
+.inertia-panelD-stone {
+  background: url(/img/cab/inertia/panels-stone-d.png);
+}
+.inertia-panelD-textiles {
+  background: url(/img/cab/inertia/panels-textiles-d.png);
+}
+.inertia-panelD-wood {
+  background: url(/img/cab/inertia/panels-wood-d.png);
+}
+.inertia-panelE {
+  width: 320px;
+  height: 133px;
+  position: absolute;
+  top: 275px;
+  right: 0;
+  z-index: 9000;
+}
+.inertia-panelE-metal-decorative {
+  background: url(/img/cab/inertia/panels-metal-decorative-e.png);
+}
+.inertia-panelE-metal-bonded {
+  background: url(/img/cab/inertia/panels-metal-bonded-e.png);
+}
+.inertia-panelE-metal-sculpted {
+  background: url(/img/cab/inertia/panels-metal-sculpted-e.png);
+}
+.inertia-panelE-metal-mesh {
+  background: url(/img/cab/inertia/panels-metal-mesh-e.png);
+}
+.inertia-panelE-laminate-solid {
+  background: url(/img/cab/inertia/panels-laminate-solid-e.png);
+}
+.inertia-panelE-laminate-textured {
+  background: url(/img/cab/inertia/panels-laminate-textured-e.png);
+}
+.inertia-panelE-laminate-pattern {
+  background: url(/img/cab/inertia/panels-laminate-pattern-e.png);
+}
+.inertia-panelE-laminate-wood {
+  background: url(/img/cab/inertia/panels-laminate-wood-e.png);
+}
+.inertia-panelE-glass-mirror {
+  background: url(/img/cab/inertia/panels-glass-mirror-e.png);
+}
+.inertia-panelE-glass-solid {
+  background: url(/img/cab/inertia/panels-glass-solid-e.png);
+}
+.inertia-panelE-glass-metallic {
+  background: url(/img/cab/inertia/panels-glass-metallic-e.png);
+}
+.inertia-panelE-resin-pattern {
+  background: url(/img/cab/inertia/panels-resin-pattern-e.png);
+}
+.inertia-panelE-resin-solid {
+  background: url(/img/cab/inertia/panels-resin-solid-e.png);
+}
+.inertia-panelE-resin-stone {
+  background: url(/img/cab/inertia/panels-resin-stone-e.png);
+}
+.inertia-panelE-stone {
+  background: url(/img/cab/inertia/panels-stone-e.png);
+}
+.inertia-panelE-textiles {
+  background: url(/img/cab/inertia/panels-textiles-e.png);
+}
+.inertia-panelE-wood {
+  background: url(/img/cab/inertia/panels-wood-e.png);
+}
+/*= Trim =*/
+
+.inertia-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/inertia/reveals.png);
+}
+/*= Handrails =*/
+
+.inertia-handrails {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.inertia-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/inertia-flat-finite.png);
+}
+.inertia-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/inertia-flat-infinity.png);
+}
+.inertia-handrails-beam {
+  background-image: url(/img/cab/handrails/inertia-beam.png);
+}
+.inertia-handrails-capsule {
+  background-image: url(/img/cab/handrails/inertia-capsule.png);
+}
+.inertia-handrails-round-finite {
+  background-image: url(/img/cab/handrails/inertia-round-finite.png);
+}
+.inertia-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/inertia-round-infinity.png);
+}
+/*==============================
+  Origin
+==============================*/
+
+.originFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/origin/frame.png);
+}
+.originLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/origin/lights.png);
+}
+.originFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.originFrame #handrailsSelect {
+  position: absolute;
+  top: 262px;
+  left: 0;
+  width: 341px;
+  height: 30px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.originFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.originFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/origin/highlight.png);
+}
+.originFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.originFrame .panelAHighlight {
+  top: 90px;
+  left: 0;
+  width: 341px;
+  height: 175px;
+  background-position: 0 -78px;
+}
+.originFrame .panelBHighlight {
+  top: 272px;
+  left: 0;
+  width: 341px;
+  height: 71px;
+  background-position: 0 -254px;
+}
+.originFrame .panelCHighlight {
+  top: 27px;
+  left: 0;
+  width: 341px;
+  height: 257px;
+  background-position: 0 -325px;
+}
+.originFrame .panelDHighlight {
+  top: 272px;
+  left: 0;
+  width: 341px;
+  height: 121px;
+  background-position: 0 -583px;
+}
+.originFrame .revealsHighlight {
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 425px;
+  background-position: 0 -704px;
+}
+.originFrame .handrailHighlight {
+  top: 264px;
+  left: 0;
+  width: 341px;
+  height: 30px;
+  z-index: 9999;
+  background-position: 0 -1130px;
+}
+.originFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.originFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.originFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.originFrame .panelTitle.panelB1 {
+  top: 288px;
+  left: 155px;
+}
+.originFrame .panelTitle.panelC1 {
+  top: 165px;
+  left: 15px;
+}
+.originFrame .panelTitle.panelC2 {
+  top: 165px;
+  right: 15px;
+}
+.originFrame .panelTitle.panelD1 {
+  top: 300px;
+  left: 15px;
+}
+.originFrame .panelTitle.panelD2 {
+  top: 300px;
+  right: 13px;
+}
+/*= Panels =*/
+
+.origin-panelA {
+  width: 221px;
+  height: 175px;
+  position: absolute;
+  top: 90px;
+  left: 60px;
+  z-index: 9000;
+}
+.origin-panelA-metal-decorative {
+  background: url(/img/cab/origin/panels-metal-decorative-a.png);
+}
+.origin-panelA-metal-mesh {
+  background: url(/img/cab/origin/panels-metal-mesh-a.png);
+}
+.origin-panelA-metal-sculpted {
+  background: url(/img/cab/origin/panels-metal-sculpted-a.png);
+}
+.origin-panelA-metal-bonded {
+  background: url(/img/cab/origin/panels-metal-bonded-a.png);
+}
+.origin-panelA-glass-mirror {
+  background: url(/img/cab/origin/panels-glass-mirror-a.png);
+}
+.origin-panelA-glass-solid {
+  background: url(/img/cab/origin/panels-glass-solid-a.png);
+}
+.origin-panelA-glass-metallic {
+  background: url(/img/cab/origin/panels-glass-metallic-a.png);
+}
+.origin-panelA-stone {
+  background: url(/img/cab/origin/panels-stone-a.png);
+}
+.origin-panelA-resin-pattern {
+  background: url(/img/cab/origin/panels-resin-pattern-a.png);
+}
+.origin-panelA-resin-solid {
+  background: url(/img/cab/origin/panels-resin-solid-a.png);
+}
+.origin-panelA-resin-stone {
+  background: url(/img/cab/origin/panels-resin-stone-a.png);
+}
+.origin-panelA-laminate-solid {
+  background: url(/img/cab/origin/panels-laminate-solid-a.png);
+}
+.origin-panelA-laminate-textured {
+  background: url(/img/cab/origin/panels-laminate-textured-a.png);
+}
+.origin-panelA-laminate-pattern {
+  background: url(/img/cab/origin/panels-laminate-pattern-a.png);
+}
+.origin-panelA-laminate-wood {
+  background: url(/img/cab/origin/panels-laminate-wood-a.png);
+}
+.origin-panelA-wood {
+  background: url(/img/cab/origin/panels-wood-a.png);
+}
+.origin-panelA-textiles {
+  background: url(/img/cab/origin/panels-textiles-a.png);
+}
+.origin-panelB {
+  width: 221px;
+  height: 71px;
+  position: absolute;
+  top: 272px;
+  left: 60px;
+  z-index: 9000;
+}
+.origin-panelB-metal-bonded {
+  background: url(/img/cab/origin/panels-metal-bonded-b.png);
+}
+.origin-panelB-metal-sculpted {
+  background: url(/img/cab/origin/panels-metal-sculpted-b.png);
+}
+.origin-panelB-metal-mesh {
+  background: url(/img/cab/origin/panels-metal-mesh-b.png);
+}
+.origin-panelB-metal-decorative {
+  background: url(/img/cab/origin/panels-metal-decorative-b.png);
+}
+.origin-panelB-laminate-solid {
+  background: url(/img/cab/origin/panels-laminate-solid-b.png);
+}
+.origin-panelB-laminate-textured {
+  background: url(/img/cab/origin/panels-laminate-textured-b.png);
+}
+.origin-panelB-laminate-pattern {
+  background: url(/img/cab/origin/panels-laminate-pattern-b.png);
+}
+.origin-panelB-laminate-wood {
+  background: url(/img/cab/origin/panels-laminate-wood-b.png);
+}
+.origin-panelB-glass-mirror {
+  background: url(/img/cab/origin/panels-glass-mirror-b.png);
+}
+.origin-panelB-glass-solid {
+  background: url(/img/cab/origin/panels-glass-solid-b.png);
+}
+.origin-panelB-glass-metallic {
+  background: url(/img/cab/origin/panels-glass-metallic-b.png);
+}
+.origin-panelB-resin-pattern {
+  background: url(/img/cab/origin/panels-resin-pattern-b.png);
+}
+.origin-panelB-resin-solid {
+  background: url(/img/cab/origin/panels-resin-solid-b.png);
+}
+.origin-panelB-resin-stone {
+  background: url(/img/cab/origin/panels-resin-stone-b.png);
+}
+.origin-panelB-stone {
+  background: url(/img/cab/origin/panels-stone-b.png);
+}
+.origin-panelB-textiles {
+  background: url(/img/cab/origin/panels-textiles-b.png);
+}
+.origin-panelB-wood {
+  background: url(/img/cab/origin/panels-wood-b.png);
+}
+.origin-panelC {
+  width: 341px;
+  height: 257px;
+  position: absolute;
+  top: 27px;
+  left: 0;
+  z-index: 9000;
+}
+.origin-panelC-metal-decorative {
+  background: url(/img/cab/origin/panels-metal-decorative-c.png);
+}
+.origin-panelC-metal-bonded {
+  background: url(/img/cab/origin/panels-metal-bonded-c.png);
+}
+.origin-panelC-metal-sculpted {
+  background: url(/img/cab/origin/panels-metal-sculpted-c.png);
+}
+.origin-panelC-metal-mesh {
+  background: url(/img/cab/origin/panels-metal-mesh-c.png);
+}
+.origin-panelC-laminate-solid {
+  background: url(/img/cab/origin/panels-laminate-solid-c.png);
+}
+.origin-panelC-laminate-textured {
+  background: url(/img/cab/origin/panels-laminate-textured-c.png);
+}
+.origin-panelC-laminate-pattern {
+  background: url(/img/cab/origin/panels-laminate-pattern-c.png);
+}
+.origin-panelC-laminate-wood {
+  background: url(/img/cab/origin/panels-laminate-wood-c.png);
+}
+.origin-panelC-glass-mirror {
+  background: url(/img/cab/origin/panels-glass-mirror-c.png);
+}
+.origin-panelC-glass-solid {
+  background: url(/img/cab/origin/panels-glass-solid-c.png);
+}
+.origin-panelC-glass-metallic {
+  background: url(/img/cab/origin/panels-glass-metallic-c.png);
+}
+.origin-panelC-resin-pattern {
+  background: url(/img/cab/origin/panels-resin-pattern-c.png);
+}
+.origin-panelC-resin-solid {
+  background: url(/img/cab/origin/panels-resin-solid-c.png);
+}
+.origin-panelC-resin-stone {
+  background: url(/img/cab/origin/panels-resin-stone-c.png);
+}
+.origin-panelC-stone {
+  background: url(/img/cab/origin/panels-stone-c.png);
+}
+.origin-panelC-textiles {
+  background: url(/img/cab/origin/panels-textiles-c.png);
+}
+.origin-panelC-wood {
+  background: url(/img/cab/origin/panels-wood-c.png);
+}
+.origin-panelD {
+  width: 341px;
+  height: 121px;
+  position: absolute;
+  top: 272px;
+  left: 0;
+  z-index: 9000;
+}
+.origin-panelD-metal-decorative {
+  background: url(/img/cab/origin/panels-metal-decorative-d.png);
+}
+.origin-panelD-metal-bonded {
+  background: url(/img/cab/origin/panels-metal-bonded-d.png);
+}
+.origin-panelD-metal-sculpted {
+  background: url(/img/cab/origin/panels-metal-sculpted-d.png);
+}
+.origin-panelD-metal-mesh {
+  background: url(/img/cab/origin/panels-metal-mesh-d.png);
+}
+.origin-panelD-laminate-solid {
+  background: url(/img/cab/origin/panels-laminate-solid-d.png);
+}
+.origin-panelD-laminate-textured {
+  background: url(/img/cab/origin/panels-laminate-textured-d.png);
+}
+.origin-panelD-laminate-pattern {
+  background: url(/img/cab/origin/panels-laminate-pattern-d.png);
+}
+.origin-panelD-laminate-wood {
+  background: url(/img/cab/origin/panels-laminate-wood-d.png);
+}
+.origin-panelD-glass-mirror {
+  background: url(/img/cab/origin/panels-glass-mirror-d.png);
+}
+.origin-panelD-glass-solid {
+  background: url(/img/cab/origin/panels-glass-solid-d.png);
+}
+.origin-panelD-glass-metallic {
+  background: url(/img/cab/origin/panels-glass-metallic-d.png);
+}
+.origin-panelD-resin-pattern {
+  background: url(/img/cab/origin/panels-resin-pattern-d.png);
+}
+.origin-panelD-resin-solid {
+  background: url(/img/cab/origin/panels-resin-solid-d.png);
+}
+.origin-panelD-resin-stone {
+  background: url(/img/cab/origin/panels-resin-stone-d.png);
+}
+.origin-panelD-stone {
+  background: url(/img/cab/origin/panels-stone-d.png);
+}
+.origin-panelD-textiles {
+  background: url(/img/cab/origin/panels-textiles-d.png);
+}
+.origin-panelD-wood {
+  background: url(/img/cab/origin/panels-wood-d.png);
+}
+/*= Trim =*/
+
+.origin-reveals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 430px;
+  z-index: 8500;
+  background-image: url(/img/cab/origin/reveals.png);
+}
+/*= Handrails =*/
+
+.origin-handrails {
+  position: absolute;
+  top: 264px;
+  left: 0;
+  width: 341px;
+  height: 60px;
+  z-index: 9900;
+}
+.origin-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/origin-flat-finite.png);
+}
+.origin-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/origin-flat-infinity.png);
+}
+.origin-handrails-beam {
+  background-image: url(/img/cab/handrails/origin-beam.png);
+}
+.origin-handrails-capsule {
+  background-image: url(/img/cab/handrails/origin-capsule.png);
+}
+.origin-handrails-round-finite {
+  background-image: url(/img/cab/handrails/origin-round-finite.png);
+}
+.origin-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/origin-round-infinity.png);
+}
+/*==============================
+  Panorama
+==============================*/
+
+.panoramaFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/panorama/frame.png);
+}
+.panoramaLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/panorama/lights.png);
+}
+.panoramaFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.panoramaFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.panoramaFrame #panelsSelect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 341px;
+  height: 420px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.panoramaFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/panorama/highlight.png);
+}
+.panoramaFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.panoramaFrame .panelAHighlight {
+  top: 12px;
+  left: 0;
+  width: 341px;
+  height: 409px;
+  background-position: 0 -78px;
+}
+.panoramaFrame .revealsHighlight {
+  top: 3px;
+	left: 0;
+	width: 341px;
+	height: 427px;
+	background-position: 0 -486px;
+}
+.panoramaFrame .handrailHighlight {
+  top: 263px;
+	left: 0;
+	width: 341px;
+	height: 34px;
+	z-index: 9999;
+	background-position: 0 -913px;
+}
+.panoramaFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.panoramaFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.panoramaFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.panoramaFrame .panelTitle.panelA2 {
+  top: 295px;
+  left: 155px;
+}
+.panoramaFrame .panelTitle.panelA3 {
+  top: 165px;
+  left: 15px;
+}
+.panoramaFrame .panelTitle.panelA4 {
+  top: 165px;
+  right: 15px;
+}
+.panoramaFrame .panelTitle.panelA5 {
+  top: 320px;
+  left: 15px;
+}
+.panoramaFrame .panelTitle.panelA6 {
+  top: 320px;
+  right: 13px;
+}
+/*= Panels =*/
+
+.panorama-panelA {
+  width: 341px;
+  height: 409px;
+  position: absolute;
+  top: 11px;
+  left: 0;
+  z-index: 9000;
+}
+.panorama-panelA-glass {
+  background: url(/img/cab/panorama/panels-glass-a.png);
+}
+/*= Trim =*/
+
+.panorama-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/panorama/reveals.png);
+}
+/*= Handrails =*/
+
+.panorama-handrails {
+  position: absolute;
+  top: 262px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.panorama-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/panorama-flat-finite.png);
+}
+.panorama-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/panorama-flat-infinity.png);
+}
+.panorama-handrails-beam {
+  background-image: url(/img/cab/handrails/panorama-beam.png);
+}
+.panorama-handrails-capsule {
+  background-image: url(/img/cab/handrails/panorama-capsule.png);
+}
+.panorama-handrails-round-finite {
+  background-image: url(/img/cab/handrails/panorama-round-finite.png);
+}
+.panorama-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/panorama-round-infinity.png);
+}
+/*==============================
+  Portal
+==============================*/
+
+.portalFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/portal/frame.png);
+}
+.portalLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 94px;
+  z-index: 9850;
+  background: url(/img/cab/portal/lights.png);
+}
+.portalFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 94px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.portalFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.portalFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.portalFrame #bumperSelect {
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  width: 341px;
+  height: 87px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.portalFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/portal/highlight.png);
+}
+.portalFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 94px;
+  background-position: 0 0;
+}
+.portalFrame .panelAHighlight {
+  top: 30px;
+  left: 0;
+  width: 341px;
+  height: 254px;
+  background-position: 0 -95px;
+}
+.portalFrame .panelBHighlight {
+  top: 270px;
+	left: 0;
+	width: 341px;
+	height: 122px;
+  background-position: 0 -349px;
+}
+
+.portalFrame .revealsHighlight {
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 426px;
+  background-position: 0 -473px;
+}
+.portalFrame .handrailHighlight {
+  top: 265px;
+  left: 0;
+  width: 341px;
+  height: 31px;
+  z-index: 9999;
+  background-position: 0 -901px;
+}
+.portalFrame .bumperHighlight {
+  bottom: 21px;
+  left: 0;
+  width: 341px;
+  height: 87px;
+  z-index: 9999;
+  background-position: 0 -933px;
+}
+.portalFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.portalFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.portalFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.portalFrame .panelTitle.panelA2 {
+  top: 165px;
+  left: 25px;
+}
+.portalFrame .panelTitle.panelA3 {
+  top: 165px;
+  right: 25px;
+}
+.portalFrame .panelTitle.panelB1 {
+  top: 280px;
+  left: 156px;
+}
+.portalFrame .panelTitle.panelB2 {
+  top: 300px;
+  left: 26px;
+}
+.portalFrame .panelTitle.panelB3 {
+  top: 300px;
+  right: 26px;
+}
+/*= Panels =*/
+
+.portal-panelA {
+  width: 331px;
+  height: 254px;
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  z-index: 9000;
+}
+.portal-panelA-metal-decorative {
+  background: url(/img/cab/portal/panels-metal-decorative-a.png);
+}
+.portal-panelA-laminate-solid {
+  background: url(/img/cab/portal/panels-laminate-solid-a.png);
+}
+.portal-panelA-laminate-textured {
+  background: url(/img/cab/portal/panels-laminate-textured-a.png);
+}
+.portal-panelA-laminate-pattern {
+  background: url(/img/cab/portal/panels-laminate-pattern-a.png);
+}
+.portal-panelA-laminate-wood {
+  background: url(/img/cab/portal/panels-laminate-wood-a.png);
+}
+.portal-panelB {
+  width: 331px;
+  height: 122px;
+  position: absolute;
+  top: 271px;
+  left: 5px;
+  z-index: 9000;
+}
+.portal-panelB-metal-decorative {
+  background: url(/img/cab/portal/panels-metal-decorative-b.png);
+}
+.portal-panelB-laminate-solid {
+  background: url(/img/cab/portal/panels-laminate-solid-b.png);
+}
+.portal-panelB-laminate-textured {
+  background: url(/img/cab/portal/panels-laminate-textured-b.png);
+}
+.portal-panelB-laminate-pattern {
+  background: url(/img/cab/portal/panels-laminate-pattern-b.png);
+}
+.portal-panelB-laminate-wood {
+  background: url(/img/cab/portal/panels-laminate-wood-b.png);
+}
+/*= Trim =*/
+
+.portal-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/portal/reveals.png);
+}
+/*= Handrails =*/
+
+.portal-handrails {
+  position: absolute;
+  top: 262px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.portal-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/portal-flat-finite.png);
+}
+.portal-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/portal-flat-infinity.png);
+}
+.portal-handrails-beam {
+  background-image: url(/img/cab/handrails/portal-beam.png);
+}
+.portal-handrails-round-finite {
+  background-image: url(/img/cab/handrails/portal-round-finite.png);
+}
+.portal-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/portal-round-infinity.png);
+}
+/*= Ceilings =*/
+
+.portalFrame .ceilings-radiant-diffuser {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 165px;
+  z-index: 9900;
+  background: url(/img/cab/ceilings/freight-radiant-diffuser.png);
+}
+.portalFrame .ceilings-classic-nine {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 165px;
+  z-index: 9900;
+  background: url(/img/cab/ceilings/freight-classic-nine.png);
+}
+/*= Bumpers =*/
+
+.portalFrame .portal-bumpers {
+	position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 341px;
+  height: 121px;
+  z-index: 9990;
+  background: url(/img/cab/handrails/bumper.png);
+}
+/*==============================
+  Premier
+==============================*/
+
+.premierFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/premier/frame.png);
+}
+.premierLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/premier/lights.png);
+}
+.premierFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.premierFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.premierFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.premierFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/premier/highlight.png);
+}
+.premierFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.premierFrame .panelAHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 269px;
+  background-position: 0 -78px;
+}
+.premierFrame .panelBHighlight {
+  top: 13px;
+  left: 0;
+  width: 341px;
+  height: 260px;
+  background-position: 0 -347px;
+}
+.premierFrame .panelCHighlight {
+  top: 272px;
+  left: 0;
+  width: 341px;
+  height: 134px;
+  background-position: 0 -607px;
+}
+.premierFrame .revealsHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 430px;
+  background-position: 0 -741px;
+}
+.premierFrame .handrailHighlight {
+  top: 257px;
+  left: 0;
+  width: 341px;
+  height: 40px;
+  z-index: 9999;
+  background-position: 0 -1171px;
+}
+.premierFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.premierFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.premierFrame .panelTitle.panelA1 {
+  top: 150px;
+  left: 155px;
+}
+.premierFrame .panelTitle.panelA2 {
+  top: 290px;
+  left: 155px;
+}
+.premierFrame .panelTitle.panelB1 {
+  top: 150px;
+  left: 90px;
+}
+.premierFrame .panelTitle.panelB2 {
+  top: 150px;
+  right: 90px;
+}
+.premierFrame .panelTitle.panelB3 {
+  top: 150px;
+  left: 12px;
+}
+.premierFrame .panelTitle.panelB4 {
+  top: 150px;
+  right: 12px;
+}
+.premierFrame .panelTitle.panelC1 {
+  top: 290px;
+  left: 88px;
+}
+.premierFrame .panelTitle.panelC2 {
+  top: 290px;
+  right: 88px;
+}
+.premierFrame .panelTitle.panelC3 {
+  top: 310px;
+  left: 12px;
+}
+.premierFrame .panelTitle.panelC4 {
+  top: 310px;
+  right: 12px;
+}
+/*= Panels =*/
+
+.premier-panelA {
+  width: 21px;
+  height: 269px;
+  position: absolute;
+  top: 82px;
+  left: 160px;
+  z-index: 9000;
+}
+.premier-panelA-metal-decorative {
+  background: url(/img/cab/premier/panels-metal-decorative-a.png);
+}
+.premier-panelA-metal-mesh {
+  background: url(/img/cab/premier/panels-metal-mesh-a.png);
+}
+.premier-panelA-metal-sculpted {
+  background: url(/img/cab/premier/panels-metal-sculpted-a.png);
+}
+.premier-panelA-metal-bonded {
+  background: url(/img/cab/premier/panels-metal-bonded-a.png);
+}
+.premier-panelA-glass-mirror {
+  background: url(/img/cab/premier/panels-glass-mirror-a.png);
+}
+.premier-panelA-glass-solid {
+  background: url(/img/cab/premier/panels-glass-solid-a.png);
+}
+.premier-panelA-glass-metallic {
+  background: url(/img/cab/premier/panels-glass-metallic-a.png);
+}
+.premier-panelA-stone {
+  background: url(/img/cab/premier/panels-stone-a.png);
+}
+.premier-panelA-resin-pattern {
+  background: url(/img/cab/premier/panels-resin-pattern-a.png);
+}
+.premier-panelA-resin-solid {
+  background: url(/img/cab/premier/panels-resin-solid-a.png);
+}
+.premier-panelA-resin-stone {
+  background: url(/img/cab/premier/panels-resin-stone-a.png);
+}
+.premier-panelA-laminate-solid {
+  background: url(/img/cab/premier/panels-laminate-solid-a.png);
+}
+.premier-panelA-laminate-textured {
+  background: url(/img/cab/premier/panels-laminate-textured-a.png);
+}
+.premier-panelA-laminate-pattern {
+  background: url(/img/cab/premier/panels-laminate-pattern-a.png);
+}
+.premier-panelA-laminate-wood {
+  background: url(/img/cab/premier/panels-laminate-wood-a.png);
+}
+.premier-panelA-wood {
+  background: url(/img/cab/premier/panels-wood-a.png);
+}
+.premier-panelA-textiles {
+  background: url(/img/cab/premier/panels-textiles-a.png);
+}
+.premier-panelA-backlit-resin {
+	width: 341px;
+	height: 430px;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+  background: url(/img/cab/premier/panels-backlit-a.png);
+}
+.premier-panelA-backlit-glass {
+  width: 341px;
+	height: 430px;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+  background: url(/img/cab/premier/panels-backlit-glass-a.png);
+}
+.premier-panelB {
+  width: 341px;
+  height: 260px;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  z-index: 9000;
+}
+.premier-panelB-metal-bonded {
+  background: url(/img/cab/premier/panels-metal-bonded-b.png);
+}
+.premier-panelB-metal-sculpted {
+  background: url(/img/cab/premier/panels-metal-sculpted-b.png);
+}
+.premier-panelB-metal-mesh {
+  background: url(/img/cab/premier/panels-metal-mesh-b.png);
+}
+.premier-panelB-metal-decorative {
+  background: url(/img/cab/premier/panels-metal-decorative-b.png);
+}
+.premier-panelB-laminate-solid {
+  background: url(/img/cab/premier/panels-laminate-solid-b.png);
+}
+.premier-panelB-laminate-textured {
+  background: url(/img/cab/premier/panels-laminate-textured-b.png);
+}
+.premier-panelB-laminate-pattern {
+  background: url(/img/cab/premier/panels-laminate-pattern-b.png);
+}
+.premier-panelB-laminate-wood {
+  background: url(/img/cab/premier/panels-laminate-wood-b.png);
+}
+.premier-panelB-glass-mirror {
+  background: url(/img/cab/premier/panels-glass-mirror-b.png);
+}
+.premier-panelB-glass-solid {
+  background: url(/img/cab/premier/panels-glass-solid-b.png);
+}
+.premier-panelB-glass-metallic {
+  background: url(/img/cab/premier/panels-glass-metallic-b.png);
+}
+.premier-panelB-resin-pattern {
+  background: url(/img/cab/premier/panels-resin-pattern-b.png);
+}
+.premier-panelB-resin-solid {
+  background: url(/img/cab/premier/panels-resin-solid-b.png);
+}
+.premier-panelB-resin-stone {
+  background: url(/img/cab/premier/panels-resin-stone-b.png);
+}
+.premier-panelB-stone {
+  background: url(/img/cab/premier/panels-stone-b.png);
+}
+.premier-panelB-textiles {
+  background: url(/img/cab/premier/panels-textiles-b.png);
+}
+.premier-panelB-wood {
+  background: url(/img/cab/premier/panels-wood-b.png);
+}
+.premier-panelC {
+  width: 341px;
+  height: 134px;
+  position: absolute;
+  top: 274px;
+  left: 0;
+  z-index: 9000;
+}
+.premier-panelC-metal-decorative {
+  background: url(/img/cab/premier/panels-metal-decorative-c.png);
+}
+.premier-panelC-metal-bonded {
+  background: url(/img/cab/premier/panels-metal-bonded-c.png);
+}
+.premier-panelC-metal-sculpted {
+  background: url(/img/cab/premier/panels-metal-sculpted-c.png);
+}
+.premier-panelC-metal-mesh {
+  background: url(/img/cab/premier/panels-metal-mesh-c.png);
+}
+.premier-panelC-laminate-solid {
+  background: url(/img/cab/premier/panels-laminate-solid-c.png);
+}
+.premier-panelC-laminate-textured {
+  background: url(/img/cab/premier/panels-laminate-textured-c.png);
+}
+.premier-panelC-laminate-pattern {
+  background: url(/img/cab/premier/panels-laminate-pattern-c.png);
+}
+.premier-panelC-laminate-wood {
+  background: url(/img/cab/premier/panels-laminate-wood-c.png);
+}
+.premier-panelC-glass-mirror {
+  background: url(/img/cab/premier/panels-glass-mirror-c.png);
+}
+.premier-panelC-glass-solid {
+  background: url(/img/cab/premier/panels-glass-solid-c.png);
+}
+.premier-panelC-glass-metallic {
+  background: url(/img/cab/premier/panels-glass-metallic-c.png);
+}
+.premier-panelC-resin-pattern {
+  background: url(/img/cab/premier/panels-resin-pattern-c.png);
+}
+.premier-panelC-resin-solid {
+  background: url(/img/cab/premier/panels-resin-solid-c.png);
+}
+.premier-panelC-resin-stone {
+  background: url(/img/cab/premier/panels-resin-stone-c.png);
+}
+.premier-panelC-stone {
+  background: url(/img/cab/premier/panels-stone-c.png);
+}
+.premier-panelC-textiles {
+  background: url(/img/cab/premier/panels-textiles-c.png);
+}
+.premier-panelC-wood {
+  background: url(/img/cab/premier/panels-wood-c.png);
+}
+/*= Trim =*/
+
+.premier-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/premier/reveals.png);
+}
+/*= Handrails =*/
+
+.premier-handrails {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.premier-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/premier-flat-finite.png);
+}
+.premier-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/premier-flat-infinity.png);
+}
+.premier-handrails-beam {
+  background-image: url(/img/cab/handrails/premier-beam.png);
+}
+.premier-handrails-capsule {
+  background-image: url(/img/cab/handrails/premier-capsule.png);
+}
+.premier-handrails-round-finite {
+  background-image: url(/img/cab/handrails/premier-round-finite.png);
+}
+.premier-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/premier-round-infinity.png);
+}
+/*==============================
+  Spectra
+==============================*/
+
+.spectraFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/spectra/frame.png);
+}
+.spectraLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/spectra/lights.png);
+}
+.spectraFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.spectraFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.spectraFrame #panelsSelect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 341px;
+  height: 420px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.spectraFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/spectra/highlight.png);
+}
+.spectraFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.spectraFrame .panelAHighlight {
+  top: 80px;
+  left: 0;
+  width: 341px;
+  height: 280px;
+  background-position: 0 -77px;
+}
+.spectraFrame .panelBHighlight {
+  top: 12px;
+  left: 0;
+  width: 341px;
+  height: 271px;
+  background-position: 0 -358px;
+}
+.spectraFrame .panelCHighlight {
+  top: 275px;
+  left: 0;
+  width: 341px;
+  height: 146px;
+  background-position: 0 -630px;
+}
+.spectraFrame .revealsHighlight {
+  top: 3px;
+	left: 0;
+	width: 341px;
+	height: 427px;
+	background-position: 0 -774px;
+}
+.spectraFrame .handrailHighlight {
+  top: 263px;
+	left: 0;
+	width: 341px;
+	height: 34px;
+	z-index: 9999;
+	background-position: 0 -1201px;
+}
+.spectraFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.spectraFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.spectraFrame .panelTitle.panelA1 {
+  top: 150px;
+  left: 155px;
+}
+.spectraFrame .panelTitle.panelA2 {
+  top: 295px;
+  left: 155px;
+}
+.spectraFrame .panelTitle.panelB1 {
+  top: 150px;
+  left: 15px;
+}
+.spectraFrame .panelTitle.panelB2 {
+  top: 150px;
+  right: 15px;
+}
+.spectraFrame .panelTitle.panelC1 {
+  top: 320px;
+  left: 15px;
+}
+.spectraFrame .panelTitle.panelC2 {
+  top: 320px;
+  right: 13px;
+}
+/*= Panels =*/
+
+.spectra-panelA {
+  width: 231px;
+	height: 280px;
+	position: absolute;
+	top: 80px;
+	left: 55px;
+	z-index: 9000;
+}
+.spectra-panelA-glass {
+  background: url(/img/cab/spectra/panels-glass-a.png);
+}
+.spectra-panelB {
+  width: 341px;
+  height: 271px;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  z-index: 9000;
+}
+.spectra-panelB-metal-bonded {
+  background: url(/img/cab/spectra/panels-metal-bonded-b.png);
+}
+.spectra-panelB-metal-sculpted {
+  background: url(/img/cab/spectra/panels-metal-sculpted-b.png);
+}
+.spectra-panelB-metal-mesh {
+  background: url(/img/cab/spectra/panels-metal-mesh-b.png);
+}
+.spectra-panelB-metal-decorative {
+  background: url(/img/cab/spectra/panels-metal-decorative-b.png);
+}
+.spectra-panelB-laminate-solid {
+  background: url(/img/cab/spectra/panels-laminate-solid-b.png);
+}
+.spectra-panelB-laminate-textured {
+  background: url(/img/cab/spectra/panels-laminate-textured-b.png);
+}
+.spectra-panelB-laminate-pattern {
+  background: url(/img/cab/spectra/panels-laminate-pattern-b.png);
+}
+.spectra-panelB-laminate-wood {
+  background: url(/img/cab/spectra/panels-laminate-wood-b.png);
+}
+.spectra-panelB-glass-mirror {
+  background: url(/img/cab/spectra/panels-glass-mirror-b.png);
+}
+.spectra-panelB-glass-solid {
+  background: url(/img/cab/spectra/panels-glass-solid-b.png);
+}
+.spectra-panelB-glass-metallic {
+  background: url(/img/cab/spectra/panels-glass-metallic-b.png);
+}
+.spectra-panelB-resin-pattern {
+  background: url(/img/cab/spectra/panels-resin-pattern-b.png);
+}
+.spectra-panelB-resin-solid {
+  background: url(/img/cab/spectra/panels-resin-solid-b.png);
+}
+.spectra-panelB-resin-stone {
+  background: url(/img/cab/spectra/panels-resin-stone-b.png);
+}
+.spectra-panelB-stone {
+  background: url(/img/cab/spectra/panels-stone-b.png);
+}
+.spectra-panelB-textiles {
+  background: url(/img/cab/spectra/panels-textiles-b.png);
+}
+.spectra-panelB-wood {
+  background: url(/img/cab/spectra/panels-wood-b.png);
+}
+.spectra-panelC {
+  width: 341px;
+  height: 146px;
+  position: absolute;
+  top: 274px;
+  left: 0;
+  z-index: 9000;
+}
+.spectra-panelC-metal-decorative {
+  background: url(/img/cab/spectra/panels-metal-decorative-c.png);
+}
+.spectra-panelC-metal-bonded {
+  background: url(/img/cab/spectra/panels-metal-bonded-c.png);
+}
+.spectra-panelC-metal-sculpted {
+  background: url(/img/cab/spectra/panels-metal-sculpted-c.png);
+}
+.spectra-panelC-metal-mesh {
+  background: url(/img/cab/spectra/panels-metal-mesh-c.png);
+}
+.spectra-panelC-laminate-solid {
+  background: url(/img/cab/spectra/panels-laminate-solid-c.png);
+}
+.spectra-panelC-laminate-textured {
+  background: url(/img/cab/spectra/panels-laminate-textured-c.png);
+}
+.spectra-panelC-laminate-pattern {
+  background: url(/img/cab/spectra/panels-laminate-pattern-c.png);
+}
+.spectra-panelC-laminate-wood {
+  background: url(/img/cab/spectra/panels-laminate-wood-c.png);
+}
+.spectra-panelC-glass-mirror {
+  background: url(/img/cab/spectra/panels-glass-mirror-c.png);
+}
+.spectra-panelC-glass-solid {
+  background: url(/img/cab/spectra/panels-glass-solid-c.png);
+}
+.spectra-panelC-glass-metallic {
+  background: url(/img/cab/spectra/panels-glass-metallic-c.png);
+}
+.spectra-panelC-resin-pattern {
+  background: url(/img/cab/spectra/panels-resin-pattern-c.png);
+}
+.spectra-panelC-resin-solid {
+  background: url(/img/cab/spectra/panels-resin-solid-c.png);
+}
+.spectra-panelC-resin-stone {
+  background: url(/img/cab/spectra/panels-resin-stone-c.png);
+}
+.spectra-panelC-stone {
+  background: url(/img/cab/spectra/panels-stone-c.png);
+}
+.spectra-panelC-textiles {
+  background: url(/img/cab/spectra/panels-textiles-c.png);
+}
+.spectra-panelC-wood {
+  background: url(/img/cab/spectra/panels-wood-c.png);
+}
+/*= Trim =*/
+
+.spectra-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/spectra/reveals.png);
+}
+/*= Handrails =*/
+
+.spectra-handrails {
+  position: absolute;
+  top: 262px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.spectra-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/panorama-flat-finite.png);
+}
+.spectra-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/panorama-flat-infinity.png);
+}
+.spectra-handrails-beam {
+  background-image: url(/img/cab/handrails/panorama-beam.png);
+}
+.spectra-handrails-capsule {
+  background-image: url(/img/cab/handrails/panorama-capsule.png);
+}
+.spectra-handrails-round-finite {
+  background-image: url(/img/cab/handrails/panorama-round-finite.png);
+}
+.spectra-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/panorama-round-infinity.png);
+}
+/*==============================
+  Stellar
+==============================*/
+
+.stellarFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/stellar/frame.png);
+}
+.stellarLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/stellar/lights.png);
+}
+.stellarFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.stellarFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.stellarFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.stellarFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/stellar/highlight.png);
+}
+.stellarFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.stellarFrame .panelAHighlight {
+  top: 82px;
+  left: 0;
+  width: 341px;
+  height: 178px;
+  background-position: 0 -78px;
+}
+.stellarFrame .panelBHighlight {
+  top: 276px;
+  left: 0;
+  width: 341px;
+  height: 74px;
+  background-position: 0 -257px;
+}
+.stellarFrame .panelCHighlight {
+  top: 15px;
+  left: 0;
+  width: 341px;
+  height: 258px;
+  background-position: 0 -332px;
+}
+.stellarFrame .panelDHighlight {
+  top: 275px;
+  left: 0;
+  width: 341px;
+  height: 131px;
+  background-position: 0 -591px;
+}
+.stellarFrame .revealsHighlight {
+  top: 5px;
+  height: 426px;
+  left: 0;
+  width: 341px;
+  background-position: 0 -763px;
+}
+.stellarFrame .handrailHighlight {
+  top: 260px;
+  left: 0;
+  width: 341px;
+  height: 40px;
+  z-index: 9999;
+  background-position: 0 -723px;
+}
+.stellarFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.stellarFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.stellarFrame .panelTitle.panelA1 {
+  top: 160px;
+  left: 155px;
+}
+.stellarFrame .panelTitle.panelB1 {
+  top: 295px;
+  left: 155px;
+}
+.stellarFrame .panelTitle.panelC1 {
+  top: 165px;
+  left: 15px;
+}
+.stellarFrame .panelTitle.panelC2 {
+  top: 165px;
+  right: 15px;
+}
+.stellarFrame .panelTitle.panelD1 {
+  top: 300px;
+  left: 15px;
+}
+.stellarFrame .panelTitle.panelD2 {
+  top: 300px;
+  right: 13px;
+}
+/*= Panels =*/
+
+.stellar-panelA {
+  width: 235px;
+  height: 178px;
+  position: absolute;
+  top: 83px;
+  left: 53px;
+  z-index: 9000;
+}
+.stellar-panelA-metal-decorative {
+  background: url(/img/cab/stellar/panels-metal-decorative-a.png);
+}
+.stellar-panelA-metal-mesh {
+  background: url(/img/cab/stellar/panels-metal-mesh-a.png);
+}
+.stellar-panelA-metal-sculpted {
+  background: url(/img/cab/stellar/panels-metal-sculpted-a.png);
+}
+.stellar-panelA-metal-bonded {
+  background: url(/img/cab/stellar/panels-metal-bonded-a.png);
+}
+.stellar-panelA-glass-mirror {
+  background: url(/img/cab/stellar/panels-glass-mirror-a.png);
+}
+.stellar-panelA-glass-solid {
+  background: url(/img/cab/stellar/panels-glass-solid-a.png);
+}
+.stellar-panelA-glass-metallic {
+  background: url(/img/cab/stellar/panels-glass-metallic-a.png);
+}
+.stellar-panelA-stone {
+  background: url(/img/cab/stellar/panels-stone-a.png);
+}
+.stellar-panelA-resin-pattern {
+  background: url(/img/cab/stellar/panels-resin-pattern-a.png);
+}
+.stellar-panelA-resin-solid {
+  background: url(/img/cab/stellar/panels-resin-solid-a.png);
+}
+.stellar-panelA-resin-stone {
+  background: url(/img/cab/stellar/panels-resin-stone-a.png);
+}
+.stellar-panelA-laminate-solid {
+  background: url(/img/cab/stellar/panels-laminate-solid-a.png);
+}
+.stellar-panelA-laminate-textured {
+  background: url(/img/cab/stellar/panels-laminate-textured-a.png);
+}
+.stellar-panelA-laminate-pattern {
+  background: url(/img/cab/stellar/panels-laminate-pattern-a.png);
+}
+.stellar-panelA-laminate-wood {
+  background: url(/img/cab/stellar/panels-laminate-wood-a.png);
+}
+.stellar-panelA-wood {
+  background: url(/img/cab/stellar/panels-wood-a.png);
+}
+.stellar-panelA-textiles {
+  background: url(/img/cab/stellar/panels-textiles-a.png);
+}
+.stellar-panelB {
+  width: 235px;
+  height: 74px;
+  position: absolute;
+  top: 276px;
+  left: 53px;
+  z-index: 9000;
+}
+.stellar-panelB-metal-bonded {
+  background: url(/img/cab/stellar/panels-metal-bonded-b.png);
+}
+.stellar-panelB-metal-sculpted {
+  background: url(/img/cab/stellar/panels-metal-sculpted-b.png);
+}
+.stellar-panelB-metal-mesh {
+  background: url(/img/cab/stellar/panels-metal-mesh-b.png);
+}
+.stellar-panelB-metal-decorative {
+  background: url(/img/cab/stellar/panels-metal-decorative-b.png);
+}
+.stellar-panelB-laminate-solid {
+  background: url(/img/cab/stellar/panels-laminate-solid-b.png);
+}
+.stellar-panelB-laminate-textured {
+  background: url(/img/cab/stellar/panels-laminate-textured-b.png);
+}
+.stellar-panelB-laminate-pattern {
+  background: url(/img/cab/stellar/panels-laminate-pattern-b.png);
+}
+.stellar-panelB-laminate-wood {
+  background: url(/img/cab/stellar/panels-laminate-wood-b.png);
+}
+.stellar-panelB-glass-mirror {
+  background: url(/img/cab/stellar/panels-glass-mirror-b.png);
+}
+.stellar-panelB-glass-solid {
+  background: url(/img/cab/stellar/panels-glass-solid-b.png);
+}
+.stellar-panelB-glass-metallic {
+  background: url(/img/cab/stellar/panels-glass-metallic-b.png);
+}
+.stellar-panelB-resin-pattern {
+  background: url(/img/cab/stellar/panels-resin-pattern-b.png);
+}
+.stellar-panelB-resin-solid {
+  background: url(/img/cab/stellar/panels-resin-solid-b.png);
+}
+.stellar-panelB-resin-stone {
+  background: url(/img/cab/stellar/panels-resin-stone-b.png);
+}
+.stellar-panelB-stone {
+  background: url(/img/cab/stellar/panels-stone-b.png);
+}
+.stellar-panelB-textiles {
+  background: url(/img/cab/stellar/panels-textiles-b.png);
+}
+.stellar-panelB-wood {
+  background: url(/img/cab/stellar/panels-wood-b.png);
+}
+.stellar-panelC {
+  width: 341px;
+  height: 259px;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 9000;
+}
+.stellar-panelC-metal-decorative {
+  background: url(/img/cab/stellar/panels-metal-decorative-c.png);
+}
+.stellar-panelC-metal-bonded {
+  background: url(/img/cab/stellar/panels-metal-bonded-c.png);
+}
+.stellar-panelC-metal-sculpted {
+  background: url(/img/cab/stellar/panels-metal-sculpted-c.png);
+}
+.stellar-panelC-metal-mesh {
+  background: url(/img/cab/stellar/panels-metal-mesh-c.png);
+}
+.stellar-panelC-laminate-solid {
+  background: url(/img/cab/stellar/panels-laminate-solid-c.png);
+}
+.stellar-panelC-laminate-textured {
+  background: url(/img/cab/stellar/panels-laminate-textured-c.png);
+}
+.stellar-panelC-laminate-pattern {
+  background: url(/img/cab/stellar/panels-laminate-pattern-c.png);
+}
+.stellar-panelC-laminate-wood {
+  background: url(/img/cab/stellar/panels-laminate-wood-c.png);
+}
+.stellar-panelC-glass-mirror {
+  background: url(/img/cab/stellar/panels-glass-mirror-c.png);
+}
+.stellar-panelC-glass-solid {
+  background: url(/img/cab/stellar/panels-glass-solid-c.png);
+}
+.stellar-panelC-glass-metallic {
+  background: url(/img/cab/stellar/panels-glass-metallic-c.png);
+}
+.stellar-panelC-resin-pattern {
+  background: url(/img/cab/stellar/panels-resin-pattern-c.png);
+}
+.stellar-panelC-resin-solid {
+  background: url(/img/cab/stellar/panels-resin-solid-c.png);
+}
+.stellar-panelC-resin-stone {
+  background: url(/img/cab/stellar/panels-resin-stone-c.png);
+}
+.stellar-panelC-stone {
+  background: url(/img/cab/stellar/panels-stone-c.png);
+}
+.stellar-panelC-textiles {
+  background: url(/img/cab/stellar/panels-textiles-c.png);
+}
+.stellar-panelC-wood {
+  background: url(/img/cab/stellar/panels-wood-c.png);
+}
+.stellar-panelD {
+  width: 341px;
+  height: 132px;
+  position: absolute;
+  top: 275px;
+  left: 0;
+  z-index: 9000;
+}
+.stellar-panelD-metal-decorative {
+  background: url(/img/cab/stellar/panels-metal-decorative-d.png);
+}
+.stellar-panelD-metal-bonded {
+  background: url(/img/cab/stellar/panels-metal-bonded-d.png);
+}
+.stellar-panelD-metal-sculpted {
+  background: url(/img/cab/stellar/panels-metal-sculpted-d.png);
+}
+.stellar-panelD-metal-mesh {
+  background: url(/img/cab/stellar/panels-metal-mesh-d.png);
+}
+.stellar-panelD-metal-mesh-carnegie {
+  background: url(/img/cab/stellar/panels-metal-mesh-carnegie-d.png);
+}
+.stellar-panelD-laminate-solid {
+  background: url(/img/cab/stellar/panels-laminate-solid-d.png);
+}
+.stellar-panelD-laminate-textured {
+  background: url(/img/cab/stellar/panels-laminate-textured-d.png);
+}
+.stellar-panelD-laminate-pattern {
+  background: url(/img/cab/stellar/panels-laminate-pattern-d.png);
+}
+.stellar-panelD-laminate-wood {
+  background: url(/img/cab/stellar/panels-laminate-wood-d.png);
+}
+.stellar-panelD-glass-mirror {
+  background: url(/img/cab/stellar/panels-glass-mirror-d.png);
+}
+.stellar-panelD-glass-solid {
+  background: url(/img/cab/stellar/panels-glass-solid-d.png);
+}
+.stellar-panelD-glass-metallic {
+  background: url(/img/cab/stellar/panels-glass-metallic-d.png);
+}
+.stellar-panelD-resin-pattern {
+  background: url(/img/cab/stellar/panels-resin-pattern-d.png);
+}
+.stellar-panelD-resin-solid {
+  background: url(/img/cab/stellar/panels-resin-solid-d.png);
+}
+.stellar-panelD-resin-stone {
+  background: url(/img/cab/stellar/panels-resin-stone-d.png);
+}
+.stellar-panelD-stone {
+  background: url(/img/cab/stellar/panels-stone-d.png);
+}
+.stellar-panelD-textiles {
+  background: url(/img/cab/stellar/panels-textiles-d.png);
+}
+.stellar-panelD-wood {
+  background: url(/img/cab/stellar/panels-wood-d.png);
+}
+/*= Trim =*/
+
+.stellar-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/stellar/reveals.png);
+}
+/*= Handrails =*/
+
+.stellar-handrails {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.stellar-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/stellar-flat-finite.png);
+}
+.stellar-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/stellar-flat-infinity.png);
+}
+.stellar-handrails-beam {
+  background-image: url(/img/cab/handrails/stellar-beam.png);
+}
+.stellar-handrails-capsule {
+  background-image: url(/img/cab/handrails/stellar-capsule.png);
+}
+.stellar-handrails-round-finite {
+  background-image: url(/img/cab/handrails/stellar-round-finite.png);
+}
+.stellar-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/stellar-round-infinity.png);
+}
+/*==============================
+  Traverse
+==============================*/
+
+.traverseFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/traverse/frame.png);
+}
+.traverseLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/traverse/lights.png);
+}
+.traverseFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.traverseFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.traverseFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.traverseFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/traverse/highlight.png);
+}
+.traverseFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.traverseFrame .panelAHighlight {
+  top: 14px;
+  left: 1px;
+  width: 341px;
+  height: 396px;
+  background-position: 0 -78px;
+}
+.traverseFrame .panelBHighlight {
+  top: 14px;
+  left: 0;
+  width: 341px;
+  height: 394px;
+  background-position: 0 -473px;
+}
+.traverseFrame .revealsHighlight {
+  top: 2px;
+  height: 427px;
+  left: 0;
+  width: 341px;
+  background-position: 0 -867px;
+}
+.traverseFrame .handrailHighlight {
+  top: 270px;
+  left: 0;
+  width: 341px;
+  height: 34px;
+  background-position: 0 -1294px;
+  z-index: 9999;
+}
+.traverseFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.traverseFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.traverseFrame .panelTitle.panelA1 {
+  top: 163px;
+  left: 130px;
+}
+.traverseFrame .panelTitle.panelA2 {
+  top: 295px;
+  left: 130px;
+}
+.traverseFrame .panelTitle.panelA3 {
+  top: 120px;
+  left: 20px;
+}
+.traverseFrame .panelTitle.panelA4 {
+  top: 308px;
+  left: 20px;
+}
+.traverseFrame .panelTitle.panelA5 {
+  top: 113px;
+  right: 5px;
+}
+.traverseFrame .panelTitle.panelA6 {
+  top: 317px;
+  right: 5px;
+}
+.traverseFrame .panelTitle.panelB1 {
+  top: 162px;
+  left: 248px;
+}
+.traverseFrame .panelTitle.panelB2 {
+  top: 295px;
+  left: 248px;
+}
+.traverseFrame .panelTitle.panelB3 {
+  top: 105px;
+  left: -5px;
+}
+.traverseFrame .panelTitle.panelB4 {
+  top: 325px;
+  left: -5px;
+}
+.traverseFrame .panelTitle.panelB5 {
+  top: 125px;
+  right: 30px;
+}
+.traverseFrame .panelTitle.panelB6 {
+  top: 302px;
+  right: 30px;
+}
+/*= Panels =*/
+
+.traverse-panelA {
+  width: 321px;
+  height: 393px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 9000;
+}
+.traverse-panelA-metal-decorative {
+  background: url(/img/cab/traverse/panels-metal-decorative-a.png);
+}
+.traverse-panelA-metal-mesh {
+  background: url(/img/cab/traverse/panels-metal-mesh-a.png);
+}
+.traverse-panelA-metal-sculpted {
+  background: url(/img/cab/traverse/panels-metal-sculpted-a.png);
+}
+.traverse-panelA-metal-bonded {
+  background: url(/img/cab/traverse/panels-metal-bonded-a.png);
+}
+.traverse-panelA-stone {
+  background: url(/img/cab/traverse/panels-stone-a.png);
+}
+.traverse-panelA-resin-pattern {
+  background: url(/img/cab/traverse/panels-resin-pattern-a.png);
+}
+.traverse-panelA-resin-solid {
+  background: url(/img/cab/traverse/panels-resin-solid-a.png);
+}
+.traverse-panelA-resin-stone {
+  background: url(/img/cab/traverse/panels-resin-stone-a.png);
+}
+.traverse-panelA-laminate-solid {
+  background: url(/img/cab/traverse/panels-laminate-solid-a.png);
+}
+.traverse-panelA-laminate-textured {
+  background: url(/img/cab/traverse/panels-laminate-textured-a.png);
+}
+.traverse-panelA-laminate-pattern {
+  background: url(/img/cab/traverse/panels-laminate-pattern-a.png);
+}
+.traverse-panelA-laminate-wood {
+  background: url(/img/cab/traverse/panels-laminate-wood-a.png);
+}
+.traverse-panelA-wood {
+  background: url(/img/cab/traverse/panels-wood-a.png);
+}
+.traverse-panelA-textiles {
+  background: url(/img/cab/traverse/panels-textiles-a.png);
+}
+.traverse-panelB {
+  width: 301px;
+  height: 394px;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  z-index: 9000;
+}
+.traverse-panelB-metal-bonded {
+  background: url(/img/cab/traverse/panels-metal-bonded-b.png);
+}
+.traverse-panelB-metal-sculpted {
+  background: url(/img/cab/traverse/panels-metal-sculpted-b.png);
+}
+.traverse-panelB-metal-mesh {
+  background: url(/img/cab/traverse/panels-metal-mesh-b.png);
+}
+.traverse-panelB-metal-decorative {
+  background: url(/img/cab/traverse/panels-metal-decorative-b.png);
+}
+.traverse-panelB-laminate-solid {
+  background: url(/img/cab/traverse/panels-laminate-solid-b.png);
+}
+.traverse-panelB-laminate-textured {
+  background: url(/img/cab/traverse/panels-laminate-textured-b.png);
+}
+.traverse-panelB-laminate-pattern {
+  background: url(/img/cab/traverse/panels-laminate-pattern-b.png);
+}
+.traverse-panelB-laminate-wood {
+  background: url(/img/cab/traverse/panels-laminate-wood-b.png);
+}
+.traverse-panelB-resin-pattern {
+  background: url(/img/cab/traverse/panels-resin-pattern-b.png);
+}
+.traverse-panelB-resin-solid {
+  background: url(/img/cab/traverse/panels-resin-solid-b.png);
+}
+.traverse-panelB-resin-stone {
+  background: url(/img/cab/traverse/panels-resin-stone-b.png);
+}
+.traverse-panelB-stone {
+  background: url(/img/cab/traverse/panels-stone-b.png);
+}
+.traverse-panelB-textiles {
+  background: url(/img/cab/traverse/panels-textiles-b.png);
+}
+.traverse-panelB-wood {
+  background: url(/img/cab/traverse/panels-wood-b.png);
+}
+/*= Trim =*/
+
+.traverse-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 428px;
+  z-index: 8500;
+  background-image: url(/img/cab/traverse/reveals.png);
+}
+/*= Handrails =*/
+
+.traverse-handrails {
+  position: absolute;
+  top: 268px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.traverse-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/traverse-flat-finite.png);
+}
+.traverse-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/traverse-flat-infinity.png);
+}
+.traverse-handrails-beam {
+  background-image: url(/img/cab/handrails/traverse-beam.png);
+}
+.traverse-handrails-capsule {
+  background-image: url(/img/cab/handrails/traverse-capsule.png);
+}
+.traverse-handrails-round-finite {
+  background-image: url(/img/cab/handrails/traverse-round-finite.png);
+}
+.traverse-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/traverse-round-infinity.png);
+}
+/*==============================
+  Velocity
+==============================*/
+
+.velocityFrame {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 0 auto;
+  background: url(/img/cab/velocity/frame.png);
+}
+.velocityLights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 78px;
+  z-index: 9850;
+  background: url(/img/cab/velocity/lights.png);
+}
+.velocityFrame #ceilingSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.velocityFrame #handrailsSelect {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 35px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.velocityFrame #panelsSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 405px;
+  z-index: 9999;
+  cursor: pointer;
+}
+.velocityFrame .highlight {
+  position: absolute;
+  background: url(/img/cab/velocity/highlight.png);
+}
+.velocityFrame .ceilingHighlight {
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 77px;
+  background-position: 0 0;
+}
+.velocityFrame .panelAHighlight {
+  top: 83px;
+  left: 0;
+  width: 341px;
+  height: 267px;
+  background-position: 0 -78px;
+}
+.velocityFrame .panelBHighlight {
+  top: 67px;
+  left: 0;
+  width: 341px;
+  height: 297px;
+  background-position: 0 -346px;
+}
+.velocityFrame .panelCHighlight {
+  top: 14px;
+  left: 0;
+  width: 341px;
+  height: 395px;
+  background-position: 0 -644px;
+}
+.velocityFrame .revealsHighlight {
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 430px;
+  background-position: 0 -1040px;
+}
+.velocityFrame .handrailHighlight {
+  top: 257px;
+  left: 0;
+  width: 341px;
+  height: 40px;
+  z-index: 9999;
+  background-position: 0 -1468px;
+}
+.velocityFrame .panelTitle {
+  font: 18px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #999;
+  position: absolute;
+  padding: 10px;
+  z-index: 10000;
+  cursor: pointer;
+}
+.velocityFrame .panelTitle.activeOptions {
+  font: 18px 'MyriadProBold', arial, helvetica, sans-serif;
+  color: #000;
+  text-shadow: 0 0 10px #fff;
+}
+.velocityFrame .panelTitle.panelA1 {
+  top: 150px;
+  left: 155px;
+}
+.velocityFrame .panelTitle.panelA2 {
+  top: 290px;
+  left: 155px;
+}
+.velocityFrame .panelTitle.panelB1 {
+  top: 150px;
+  left: 63px;
+}
+.velocityFrame .panelTitle.panelB2 {
+  top: 290px;
+  right: 62px;
+}
+.velocityFrame .panelTitle.panelB3 {
+  top: 290px;
+  left: 63px;
+}
+.velocityFrame .panelTitle.panelB4 {
+  top: 150px;
+  right: 62px;
+}
+.velocityFrame .panelTitle.panelC1 {
+  top: 140px;
+  left: 7px;
+}
+.velocityFrame .panelTitle.panelC2 {
+  top: 140px;
+  right: 7px;
+}
+.velocityFrame .panelTitle.panelC3 {
+  top: 315px;
+  left: 7px;
+}
+.velocityFrame .panelTitle.panelC4 {
+  top: 315px;
+  right: 7px;
+}
+/*= Panels =*/
+
+.velocity-panelA {
+  width: 131px;
+  height: 269px;
+  position: absolute;
+  top: 82px;
+  left: 105px;
+  z-index: 9000;
+}
+.velocity-panelA-metal-decorative {
+  background: url(/img/cab/velocity/panels-metal-decorative-a.png);
+}
+.velocity-panelA-metal-mesh {
+  background: url(/img/cab/velocity/panels-metal-mesh-a.png);
+}
+.velocity-panelA-metal-sculpted {
+  background: url(/img/cab/velocity/panels-metal-sculpted-a.png);
+}
+.velocity-panelA-metal-bonded {
+  background: url(/img/cab/velocity/panels-metal-bonded-a.png);
+}
+.velocity-panelA-glass-mirror {
+  background: url(/img/cab/velocity/panels-glass-mirror-a.png);
+}
+.velocity-panelA-glass-solid {
+  background: url(/img/cab/velocity/panels-glass-solid-a.png);
+}
+.velocity-panelA-glass-metallic {
+  background: url(/img/cab/velocity/panels-glass-metallic-a.png);
+}
+.velocity-panelA-stone {
+  background: url(/img/cab/velocity/panels-stone-a.png);
+}
+.velocity-panelA-resin-pattern {
+  background: url(/img/cab/velocity/panels-resin-pattern-a.png);
+}
+.velocity-panelA-resin-solid {
+  background: url(/img/cab/velocity/panels-resin-solid-a.png);
+}
+.velocity-panelA-resin-stone {
+  background: url(/img/cab/velocity/panels-resin-stone-a.png);
+}
+.velocity-panelA-laminate-solid {
+  background: url(/img/cab/velocity/panels-laminate-solid-a.png);
+}
+.velocity-panelA-laminate-textured {
+  background: url(/img/cab/velocity/panels-laminate-textured-a.png);
+}
+.velocity-panelA-laminate-pattern {
+  background: url(/img/cab/velocity/panels-laminate-pattern-a.png);
+}
+.velocity-panelA-laminate-wood {
+  background: url(/img/cab/velocity/panels-laminate-wood-a.png);
+}
+.velocity-panelA-wood {
+  background: url(/img/cab/velocity/panels-wood-a.png);
+}
+.velocity-panelA-textiles {
+  background: url(/img/cab/velocity/panels-textiles-a.png);
+}
+.velocity-panelB {
+  width: 261px;
+  height: 297px;
+  position: absolute;
+  top: 67px;
+  left: 40px;
+  z-index: 9000;
+}
+.velocity-panelB-metal-bonded {
+  background: url(/img/cab/velocity/panels-metal-bonded-b.png);
+}
+.velocity-panelB-metal-sculpted {
+  background: url(/img/cab/velocity/panels-metal-sculpted-b.png);
+}
+.velocity-panelB-metal-mesh {
+  background: url(/img/cab/velocity/panels-metal-mesh-b.png);
+}
+.velocity-panelB-metal-decorative {
+  background: url(/img/cab/velocity/panels-metal-decorative-b.png);
+}
+.velocity-panelB-laminate-solid {
+  background: url(/img/cab/velocity/panels-laminate-solid-b.png);
+}
+.velocity-panelB-laminate-textured {
+  background: url(/img/cab/velocity/panels-laminate-textured-b.png);
+}
+.velocity-panelB-laminate-pattern {
+  background: url(/img/cab/velocity/panels-laminate-pattern-b.png);
+}
+.velocity-panelB-laminate-wood {
+  background: url(/img/cab/velocity/panels-laminate-wood-b.png);
+}
+.velocity-panelB-laminate-milkyway {
+  background: url(/img/cab/velocity/panels-laminate-milkyway-b.png);
+}
+.velocity-panelB-glass-mirror {
+  background: url(/img/cab/velocity/panels-glass-mirror-b.png);
+}
+.velocity-panelB-glass-solid {
+  background: url(/img/cab/velocity/panels-glass-solid-b.png);
+}
+.velocity-panelB-glass-metallic {
+  background: url(/img/cab/velocity/panels-glass-metallic-b.png);
+}
+.velocity-panelB-resin-pattern {
+  background: url(/img/cab/velocity/panels-resin-pattern-b.png);
+}
+.velocity-panelB-resin-solid {
+  background: url(/img/cab/velocity/panels-resin-solid-b.png);
+}
+.velocity-panelB-resin-stone {
+  background: url(/img/cab/velocity/panels-resin-stone-b.png);
+}
+.velocity-panelB-stone {
+  background: url(/img/cab/velocity/panels-stone-b.png);
+}
+.velocity-panelB-textiles {
+  background: url(/img/cab/velocity/panels-textiles-b.png);
+}
+.velocity-panelB-wood {
+  background: url(/img/cab/velocity/panels-wood-b.png);
+}
+.velocity-panelC {
+  width: 341px;
+  height: 394px;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  z-index: 9000;
+}
+.velocity-panelC-metal-decorative {
+  background: url(/img/cab/velocity/panels-metal-decorative-c.png);
+}
+.velocity-panelC-metal-bonded {
+  background: url(/img/cab/velocity/panels-metal-bonded-c.png);
+}
+.velocity-panelC-metal-sculpted {
+  background: url(/img/cab/velocity/panels-metal-sculpted-c.png);
+}
+.velocity-panelC-metal-mesh {
+  background: url(/img/cab/velocity/panels-metal-mesh-c.png);
+}
+.velocity-panelC-laminate-solid {
+  background: url(/img/cab/velocity/panels-laminate-solid-c.png);
+}
+.velocity-panelC-laminate-textured {
+  background: url(/img/cab/velocity/panels-laminate-textured-c.png);
+}
+.velocity-panelC-laminate-pattern {
+  background: url(/img/cab/velocity/panels-laminate-pattern-c.png);
+}
+.velocity-panelC-laminate-wood {
+  background: url(/img/cab/velocity/panels-laminate-wood-c.png);
+}
+.velocity-panelC-glass-mirror {
+  background: url(/img/cab/velocity/panels-glass-mirror-c.png);
+}
+.velocity-panelC-glass-solid {
+  background: url(/img/cab/velocity/panels-glass-solid-c.png);
+}
+.velocity-panelC-glass-metallic {
+  background: url(/img/cab/velocity/panels-glass-metallic-c.png);
+}
+.velocity-panelC-resin-pattern {
+  background: url(/img/cab/velocity/panels-resin-pattern-c.png);
+}
+.velocity-panelC-resin-solid {
+  background: url(/img/cab/velocity/panels-resin-solid-c.png);
+}
+.velocity-panelC-resin-stone {
+  background: url(/img/cab/velocity/panels-resin-stone-c.png);
+}
+.velocity-panelC-stone {
+  background: url(/img/cab/velocity/panels-stone-c.png);
+}
+.velocity-panelC-textiles {
+  background: url(/img/cab/velocity/panels-textiles-c.png);
+}
+.velocity-panelC-wood {
+  background: url(/img/cab/velocity/panels-wood-c.png);
+}
+/*= Trim =*/
+
+.velocity-reveals {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 341px;
+  height: 427px;
+  z-index: 8500;
+  background-image: url(/img/cab/velocity/reveals.png);
+}
+/*= Handrails =*/
+
+.velocity-handrails {
+  position: absolute;
+  top: 259px;
+  left: 0;
+  width: 341px;
+  height: 70px;
+  z-index: 9900;
+}
+.velocity-handrails-flat-finite {
+  background-image: url(/img/cab/handrails/velocity-flat-finite.png);
+}
+.velocity-handrails-flat-infinity {
+  background-image: url(/img/cab/handrails/velocity-flat-infinity.png);
+}
+.velocity-handrails-beam {
+  background-image: url(/img/cab/handrails/velocity-beam.png);
+}
+.velocity-handrails-capsule {
+  background-image: url(/img/cab/handrails/velocity-capsule.png);
+}
+.velocity-handrails-round-finite {
+  background-image: url(/img/cab/handrails/velocity-round-finite.png);
+}
+.velocity-handrails-round-infinity {
+  background-image: url(/img/cab/handrails/velocity-round-infinity.png);
+}
+/*=========================
+ Ceilings
+==========================*/
+
+.ceilings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 341px;
+  height: 138px;
+  z-index: 9900;
+}
+.ceilings-aurora-a {
+  z-index: 9901;
+  background: url(/img/cab/ceilings/aurora-a.png);
+}
+.ceilings-aurora-b {
+  background: url(/img/cab/ceilings/aurora-b.png);
+}
+.ceilings-aurora-glow-a {
+  height: 110px;
+  z-index: 9999;
+  background: url(/img/cab/ceilings/aurora-glow-a.png);
+}
+.ceilings-aurora-glow-b {
+  background: url(/img/cab/ceilings/aurora-glow-b.png);
+}
+.ceilings-classic-nine {
+  background: url(/img/cab/ceilings/classic-nine.png);
+}
+.ceilings-classic-six {
+  background: url(/img/cab/ceilings/classic-six.png);
+}
+.ceilings-illuminator {
+  background: url(/img/cab/ceilings/illuminator.png);
+}
+.ceilings-radiant-diffuser {
+  background: url(/img/cab/ceilings/radiant-diffuser.png);
+}
+.ceilings-centric {
+  background: url(/img/cab/ceilings/centric.png);
+}
+/* iPad Media Queries */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}

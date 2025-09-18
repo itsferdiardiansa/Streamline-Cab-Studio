@@ -1,0 +1,162 @@
+
+.content .contactContainer {
+  padding: 25px 25px 0 25px;
+}
+
+#body_text>hr:last-of-type { 
+  display: none;
+}
+.quote {
+  width: 240px;
+  margin: 30px auto;
+}
+
+.content .dashboard h2 {
+  font: 15px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin-bottom: 5px;
+}
+
+#infoMessage, .infoMessage {
+  border: 1px solid #efe3ae;
+  padding: 5px;
+  margin: 10px 0;
+  width: 100%;
+  color: #222;
+  background: #fef6d2;
+}
+
+#customerTable th.welcomeSent,
+#customerTable th.customerActive {
+  text-align: center;
+}
+
+#customerTable .iconCheck {
+  float: none;
+  margin: auto;
+}
+
+/*== Modals ===================================*/
+#mask {
+  /*display: none;*/
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  z-index: 9999;
+}
+/* You can customize to your needs  */
+
+.modal-popup {
+  font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  background: #fff;
+  width: 700px;
+  height: 500px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 99999;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+.modalEdit {
+  text-align: left;
+}
+.modalConfirm {
+  width: 300px;
+  height: 150px;
+}
+.modalNews {
+  width: 750px;
+}
+.modal-popup select {
+  text-transform: capitalize;
+}
+.modal-popup .buttonBar {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+.modal-popup .buttonBar button, .dashboard button, .modalEdit button {
+  border: 0;
+  padding: 5px 10px;
+  color: #fff;
+  background: #444;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.modal-popup .buttonBar button:active, .dashboard button:active {
+  background: #666;
+}
+.modal-popup label {
+  float: left;
+  width: 80px;
+  font-weight: bold;
+}
+.modalCareer label {
+  float: left;
+  width: 100px;
+  font-weight: bold;
+}
+.modal-popup .modalEdit label {
+  margin-top: 5px;
+  font-weight: normal;
+}
+.modal-popup textarea {
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 200px;
+  height: 100px;
+}
+.modalNews textarea {
+  width: 270px;
+  height: 150px;
+}
+.modal-popup header {
+  position: relative;
+  padding: 5px;
+  margin: 0 !important;
+  color: #333;
+  height: auto;
+  background: #fff;
+}
+.modal-popup header h1 {
+  float: left;
+  font: 14px "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+.modal-popup header .closeModal {
+  position: relative;
+  width: 16px;
+  float: right;
+  margin: 0;
+}
+.modal-popup section {
+  padding: 10px;
+}
+.modal-popup section input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 180px;
+}
+button.bigButton {
+  position: relative;
+  padding: 12px 20px;
+  border: 0;
+  font: 16px 'MyriadPro', arial, helvetica, sans-serif;
+  color: #fff;
+  font-weight: bold;
+  background: #ff8442;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+}
