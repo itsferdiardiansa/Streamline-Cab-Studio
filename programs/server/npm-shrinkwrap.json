@@ -11,7 +11,6 @@
         "@meteorjs/reify": "0.23.0",
         "@types/semver": "5.4.0",
         "@types/underscore": "1.11.2",
-        "bcrypt": "^6.0.0",
         "fibers": "5.0.1",
         "meteor-promise": "0.9.0",
         "node-gyp": "8.0.0",
@@ -231,19 +230,6 @@
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
       "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
-    },
-    "node_modules/bcrypt": {
-      "version": "6.0.0",
-      "resolved": "https://registry.npmjs.org/bcrypt/-/bcrypt-6.0.0.tgz",
-      "integrity": "sha512-cU8v/EGSrnH+HnxV2z0J7/blxH8gq7Xh2JFT6Aroax7UohdmiJJlxApMxtKfuI7z68NvvVcmR78k2LbT6efhRg==",
-      "hasInstallScript": true,
-      "dependencies": {
-        "node-addon-api": "^8.3.0",
-        "node-gyp-build": "^4.8.4"
-      },
-      "engines": {
-        "node": ">= 18"
-      }
     },
     "node_modules/brace-expansion": {
       "version": "1.1.12",
@@ -883,14 +869,6 @@
         "node": ">=0.10.0"
       }
     },
-    "node_modules/node-addon-api": {
-      "version": "8.5.0",
-      "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz",
-      "integrity": "sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==",
-      "engines": {
-        "node": "^18 || ^20 || >= 21"
-      }
-    },
     "node_modules/node-gyp": {
       "version": "8.0.0",
       "resolved": "https://registry.npmjs.org/node-gyp/-/node-gyp-8.0.0.tgz",
@@ -912,16 +890,6 @@
       },
       "engines": {
         "node": ">= 10.12.0"
-      }
-    },
-    "node_modules/node-gyp-build": {
-      "version": "4.8.4",
-      "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
-      "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==",
-      "bin": {
-        "node-gyp-build": "bin.js",
-        "node-gyp-build-optional": "optional.js",
-        "node-gyp-build-test": "build-test.js"
       }
     },
     "node_modules/node-gyp/node_modules/semver": {
@@ -1716,15 +1684,6 @@
       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
       "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
     },
-    "bcrypt": {
-      "version": "6.0.0",
-      "resolved": "https://registry.npmjs.org/bcrypt/-/bcrypt-6.0.0.tgz",
-      "integrity": "sha512-cU8v/EGSrnH+HnxV2z0J7/blxH8gq7Xh2JFT6Aroax7UohdmiJJlxApMxtKfuI7z68NvvVcmR78k2LbT6efhRg==",
-      "requires": {
-        "node-addon-api": "^8.3.0",
-        "node-gyp-build": "^4.8.4"
-      }
-    },
     "brace-expansion": {
       "version": "1.1.12",
       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.12.tgz",
@@ -2230,11 +2189,6 @@
         }
       }
     },
-    "node-addon-api": {
-      "version": "8.5.0",
-      "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz",
-      "integrity": "sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A=="
-    },
     "node-gyp": {
       "version": "8.0.0",
       "resolved": "https://registry.npmjs.org/node-gyp/-/node-gyp-8.0.0.tgz",
@@ -2258,11 +2212,6 @@
           "integrity": "sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA=="
         }
       }
-    },
-    "node-gyp-build": {
-      "version": "4.8.4",
-      "resolved": "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz",
-      "integrity": "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ=="
     },
     "node-pre-gyp": {
       "version": "0.15.0",

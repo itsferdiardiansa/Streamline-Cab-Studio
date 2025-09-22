@@ -195,6 +195,36 @@ Router.configure({
       },
       where: ['server']
     });
+    this.route('/cab/:cabID', {
+      template: 'printCab',
+      layoutTemplate: 'cabLayout',
+      subscriptions: function () {
+        subs.subscribe('cab', this.params.cabID);
+      },
+      onBeforeAction: function () {
+        Session.set('cabID', this.params.cabID);
+        this.next();
+      },
+      onStop: function () {
+        Session.set('cabID', null);
+        Session.set('mainOption', null);
+      }
+    });
+    this.route('/cabOnly/:cabID', {
+      template: 'cabOnly',
+      layoutTemplate: 'bareLayout',
+      subscriptions: function () {
+        subs.subscribe('cab', this.params.cabID);
+      },
+      onBeforeAction: function () {
+        Session.set('cabID', this.params.cabID);
+        this.next();
+      },
+      onStop: function () {
+        Session.set('cabID', null);
+        Session.set('mainOption', null);
+      }
+    });
     this.route('/signIn', {});
     this.route('/signUp', {});
     this.route('/forgotPassword', {});
