@@ -35,6 +35,14 @@
   margin: auto;
 }
 
+.not-found {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+
 /*== Modals ===================================*/
 #mask {
   /*display: none;*/
