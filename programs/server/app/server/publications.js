@@ -35,6 +35,18 @@ Meteor.publish('pages', function () {
   }
 });
 
+Meteor.publish('heros', function () {
+  try {
+    return Images.find({
+      'metadata.page': {
+        $exists: true
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 Meteor.publish('contentImages', function () {
   try {
     return Images.find({
@@ -109,6 +121,174 @@ Meteor.publish('images', function () {
 Meteor.publish('documents', function () {
   try {
     return Documents.find({});
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('employeeforms', function () {
+  try {
+    if (isAdminById(this.userId)) {
+      return EmployeeForms.find({});
+    } else {
+      var email = getEmailById(this.userId);
+      email = email ? email : "";
+      return EmployeeForms.find(
+        { $or: [{"availableFor": null},
+                {"availableFor": ""},
+                {"availableFor": email.toLowerCase().trim()}]});
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('currentNewsItem', function (slug) {
+  check(slug, String);
+  try {
+    return News.find({
+      slug: slug
+    }, {
+      fields: {
+        _id: true,
+        title: true,
+        content: true,
+        slug: true,
+        image: true,
+        created: true,
+        posted: true,
+        active: true,
+        updated: true
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('news', function () {
+  try {
+    return News.find({}, {
+      fields: {
+        _id: true,
+        title: true,
+        content: true,
+        slug: true,
+        image: true,
+        created: true,
+        posted: true,
+        active: true,
+        updated: true
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('testimonials', function () {
+  try {
+    return Testimonials.find({}, {
+      fields: {
+        _id: true,
+        title: true,
+        content: true,
+        weight: true,
+        created: true,
+        active: true,
+        updated: true,
+        image: true
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('inquiries', function () {
+  try {
+    Counts.publish(this, 'inquiries', Inquiries.find({ "subject": "generalInquiry" }), { noReady: true });
+    Counts.publish(this, 'proposals', Inquiries.find({ "subject": "proposalRequest" }), { noReady: true });
+    if (isAdminById(this.userId)) {
+      return Inquiries.find({}, {
+        fields: {
+          _id: true,
+          contactEmail: true,
+          contactName: true,
+          contactCompany: true,
+          contactState: true,
+          contactRepresentative: true,
+          contactZip: true,
+          contactContactOther: true,
+          contactAddress: true,
+          contactPhone: true,
+          contactCity: true,
+          cabProjectName: true,
+          cabWallPanels: true,
+          cabProjectDate: true,
+          cabFrontReturns: true,
+          cabProjectType: true,
+          cabDoorStyle: true,
+          cabDimension: true,
+          cabDoorSize: true,
+          cabSize: true,
+          cabCeilingFrame: true,
+          cabLinearFeet: true,
+          cabFan: true,
+          cabShell: true,
+          cabSill: true,
+          cabTop: true,
+          cabHandrails: true,
+          howHear: true,
+          formComments: true,
+          subject: true,
+          created: true
+        }
+      });
+    } else {
+      return this.ready();
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('galleries', function () {
+  try {
+    return Galleries.find({}, {
+      fields: {
+        _id: true,
+        title: true,
+        description: true,
+        weight: true,
+        created: true,
+        active: true,
+        updated: true,
+        path: true,
+        images: true
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+Meteor.publish('careers', function () {
+  try {
+    return Careers.find({}, {
+      fields: {
+        _id: true,
+        position: true,
+        description: true,
+        contactEmail: true,
+        active: true,
+        region: true,
+        posted: true,
+        doc: true,
+        created: true,
+        updated: true
+      }
+    });
   } catch (error) {
     console.log(error);
   }

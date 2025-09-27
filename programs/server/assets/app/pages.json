@@ -1,4 +1,124 @@
 [{
+  "title": "Products",
+  "slug": "products",
+  "portal": true,
+  "weight": 0,
+  "image": "/img/hero/products.jpg",
+  "text": "Eklund's crafts complete elevator cabs and custom elevator interiors. Whether a new construction project or a renovation, Eklund’s offers a wide range of custom elevator cab solutions to meet both aesthetic desires and budget requirements. <br><br>\n\n\n<h2>Our total elevator cab solutions products include:</h2>\n<ul>\n<li>Custom-crafted cabs and interiors - passenger, service (freight) and observation (glass) </li>\n<li>Customizable standard cab interiors</li>\n<li>Cladding</li>\n</ul>\n",
+  "pages": [{
+    "title": "Custom Cabs & Interiors",
+    "slug": "custom-cabs-interiors",
+    "portal": false,
+    "weight": 0,
+    "image": "/img/hero/child/products.jpg",
+    "parent": "products",
+    "text": "Eklund's crafts complete elevator cabs and custom elevator interiors. Whether a new construction project or a renovation, Eklund’s offers a wide range of custom elevator cab solutions to meet both aesthetic desires and budget requirements. We also offer a wide selection of customizable standard cab interiors.<br><br>\n\nOur total elevator cab solutions include design, manufacturing, and installation.<br><br>\n\n<h2>Complete Elevator Cabs</h2>\n<ul>\n<li>Freight/Service Cabs</li>\n<li>Passenger Cabs</li>\n<li>Glass Observation Cabs</li>\n<li>Custom Cab Shells</li>\n</ul><br><br>\n\n<h2>Custom Elevator Interiors</h2>\n\n<ul>\n<li>Freight/Service</li>\n<li>Passenger</li>\n</ul><br><br>\n\n<h2>Interior Components</h2>\n\n<ul>\n<li>Panels</li>\n<li>Ceilings</li>\n<li>Handrails</li>\n<li>Front Returns</li>\n</ul>"
+  }, {
+    "title": "Standard Cab Interiors",
+    "slug": "standard-cab-interiors",
+    "portal": false,
+    "weight": 1,
+    "image": "/img/hero/child/standard-cab-interiors.jpg",
+    "parent": "products",
+    "text": "Eklunds virtual Custom Cab Design Studio provides customers with the opportunity to build virtual standard cab prototypes online. Visualize and spec projects with just a few clicks of a mouse.<br><br>\n\nCreated to provide a custom appearance to standard, pre-engineered cabs, the Cab Design Studio can be used to specify either new cabs or renovation projects.<br><br>\n\nIn a matter of minutes, you can design an elevator cab interior specifying panels, ceilings, handrails, an lighting to create just the right elevator cab for your project. Utilizing Eklund's Standard Cab Designs significantly shorten the design cycle, reduce production time and save you money.<br><br>\n\n<a href=\"/signup/\">Register now</a> and start designing!<br><br><br>\n\n<b>View Eklund's standard product catalogs:</b><br><br>\nStandard Cab Designs<br>\nCeilings<br>\nHandrails<br>\nMaterials/Finishes<br><br>\n\n"
+  }, {
+    "title": "Cladding",
+    "slug": "cladding",
+    "portal": false,
+    "weight": 2,
+    "image": "/img/hero/child/cladding.jpg",
+    "parent": "products",
+    "text": "Eklund's offers cladding in a variety of standard and custom finishes including custom metal etching.<br><br>\n\n<ul>\n<li>Doors</li>\n<li>Entrances</li>\n<li>Front returns</li>\n<li>Transom/header</li>\n</ul>"
+  }]
+}, {
+  "title": "Services",
+  "slug": "services",
+  "portal": true,
+  "weight": 1,
+  "image": "/img/hero/services.jpg",
+  "text": "Our total elevator cab solutions include design, manufacturing, and installation of luxury, custom-crafted cabs and interiors, and a wide selection of customizable standard cab interiors.<br><br>\n\nWith more than 30 years of elevator cab manufacturing experience, Eklund’s takes pride in offering customers leading-edge design, quality craftsmanship, dependability, and prompt, on-time delivery.<br><br>\n\n<h2>Our Commitment to Our Customers</h2>\n\n<ul>\n<li>Innovative design and engineering</li>\n<li>Stringent safety standards</li>\n<li>Extensive material options</li>\n<li>Highest quality craftsmanship and fabrication</li>\n<li>Outstanding customer service</li>\n<li>Project management excellence</li>\n<li>On-time delivery within budget</li>\n<li>Professional on-site installation</li>\n<li>Dependability</li>\n</ul>",
+  "pages": [{
+    "title": "Design/Engineering",
+    "slug": "design-engineering",
+    "portal": false,
+    "weight": 0,
+    "image": "/img/hero/child/services.jpg",
+    "parent": "services",
+    "text": "Eklund’s fabricates new cabs and interiors from architects’ pre-determined specs. Our skilled team also offers customers, such as property managers, who are starting from the drawing board with guidance in material selection and complete design services.<br><br>\n\nIn addition, <a href=\"/tools-resources/design-studio\"> Eklund’s Cab Design Studio</a> provides the opportunity to build virtual standard cab prototypes online using pre-engineered panels and pre-selected materials. This shortens production schedules and achieves a custom cab look and feel at a standard cab cost."
+  }, {
+    "title": "Project Management",
+    "slug": "project-management",
+    "portal": false,
+    "weight": 1,
+    "image": "/img/hero/child/services.jpg",
+    "parent": "services",
+    "text": "Our project managers/coordinators work closely with customers throughout the entire life of the project. <br><br>"
+  }, {
+    "title": "Manufacturing",
+    "slug": "manufacturing",
+    "portal": false,
+    "weight": 2,
+    "image": "/img/hero/child/services.jpg",
+    "parent": "services",
+    "text": "Eklund’s complete elevator solutions are fabricated in-house at our manufacturing facilities in the South (Dallas/Fort Worth) and Northeast (Baltimore/Washington area). Eklund's expert craftsmen utilize state of-the-art manufacturing techniques with long-lasting, serviceable materials that meet the highest industry standards and the most stringent codes.<br><br>\n\n<h2>Highlights</h2>\n\n<ul>\n<li>Fabricated In-House</li>\n<li>Expert Craftsmen</li>\n<li>state-of-the-Art Manufacturing Techniques</li>\n<li>Long-Lasting, Serviceable Materials</li>\n<li>Meet the highest industry standards and the most stringent codes.</li>\n</ul>"
+  }, {
+    "title": "Installation",
+    "slug": "installation",
+    "portal": false,
+    "weight": 3,
+    "image": "/img/hero/child/services.jpg",
+    "parent": "services",
+    "text": "Eklund’s cabs and interiors are installed nationwide by our certified WBE installation partner, <a href=\"http://www.bcespecialties.com\" target=\"_blank\">BCE Specialties</a>. Licensed at state and local levels, BCE’s experienced installation crews offer timely and professional installation of standard cabs, custom cabs, and elevator products nationwide.<br><br>\n\nTo learn more about BCE Specialties or to request a quote for your next elevator cab installation, please contact Joseph Eklund at (817) 949-2030 x103 or email <a href='mailto:info@bcespecialties.com'>info@bcespecialties.com</a>.<br><br>\n\nBCE is a certified Women-Owned Business Enterprise (WBE).<br><br>\n\n<h2>Why Choose BCE Specialties Installation Crews?</h2>\n\n<ul>\n<li>Experienced</li>\n<li>Professional</li>\n<li>Appropriately qualified</li>\n<li>Licensed at state and local levels</li>\n<li>Timely installation</li>\n<li>Available nationwide</li>\n</ul>"
+  }]
+}, {
+  "title": "Customers",
+  "slug": "customers",
+  "portal": true,
+  "weight": 2,
+  "image": "/img/hero/customers.jpg",
+  "text": "Working with architects, elevator consultants, elevator contractors, general contractors, property managers, and building owners, we transform elevator interior visions into safe, functional, and aesthetically pleasing realities.",
+  "pages": [{
+    "title": "Property Managers/Owners",
+    "slug": "property-managers-owners",
+    "portal": false,
+    "weight": 0,
+    "parent": "customers",
+    "image": "/img/hero/child/customers.jpg",
+    "text": "We work directly with property manager and building owners to renovate existing elevator cabs. We can also work in concert with the buildings elevator service company to execute an updated look during mechanical modernizations.<br><br>\n\n<a href=/contact <a> Contact us today</a> for an on-site evaluation of your existing elevator cabs. We'll take a look and then help determine a schedule and budget to meet your renovation project needs."
+  }, {
+    "title": "Designers",
+    "slug": "designers",
+    "portal": false,
+    "weight": 1,
+    "parent": "customers",
+    "image": "/img/hero/child/customers.jpg",
+    "text": "We work with designers to extend the look and feel of a building's lobby into the elevator interior. Eklund's achieves design visions while also maintaining the required code requirements that are critical for passing inspection. <br><br>\n\nIf your design project requires elevator cab interiors <a href=/contact <a>contact us today</a> and we'll work with you to accomplish your design goals. "
+  }, {
+    "title": "Architects",
+    "slug": "architects",
+    "portal": false,
+    "weight": 2,
+    "parent": "customers",
+    "image": "/img/hero/child/customers.jpg",
+    "text": "Eklund’s fabricates new cabs and interiors from architects’ pre-determined specs. As 'total elevator cab solutions' providers, we act as consultants to architects and review their designs to ensure that their elevator interior visions meet code requirements critical for passing inspection. <br><br>\n\nIn addition, Eklund's custom cab designer provides architects with a convenient online tool to spec cab designs and finishes with a few clicks.<br><br>\n\n<i>(We are currently in the process of redesigning our Custom Cab Design tool to include several different panel layout options and updated finishes. We hope to launch the new version during the third quarter of 2014!)</i><br><br>\n\nIf your plans are for a multi-story building, <a href=/contact <a>contact us</a> and we'll work with you to spec in cab designs and materials that will complement the overall building design. "
+  }, {
+    "title": "Elevator Industry",
+    "slug": "elevator-industry",
+    "portal": false,
+    "weight": 3,
+    "parent": "customers",
+    "image": "/img/hero/child/customers.jpg",
+    "text": "Our experienced team works nationwide with elevator companies (OEMs - Original Equipment Manufacturer), elevator service companies, and elevator consultants as a partner for projects requiring custom elevator cab shells and interiors.<br><br>\n\n<a href=/contact <a> Contact us today</a> for a quote on an upcoming interior project. "
+  }, {
+    "title": "General Contractors",
+    "slug": "general-contractors",
+    "portal": false,
+    "weight": 4,
+    "parent": "customers",
+    "image": "/img/hero/child/customers.jpg",
+    "text": "Eklund's can provide bids directly to general contractors for projects requiring custom elevator interiors. We are an experienced sub-contractor and are pre-qualified to work with many of the nations leading construction companies.<br><br>\n\n<a href=/contact <a> Contact us today</a> for a quote on an upcoming elevator cab or interior project. "
+  }]
+}, {
   "title": "Tools & Resources",
   "slug": "tools-resources",
   "portal": true,
@@ -24,4 +144,117 @@
     "text": "none",
     "isDesignStudio": true
   }]
+}, {
+  "title": "Projects",
+  "slug": "projects",
+  "portal": true,
+  "weight": 4,
+  "image": "/img/hero/projects.jpg",
+  "text": "With customers from coast to coast, our projects range from renovating existing cabs to creating custom glass observation cabs and ornate interiors for new buildings. Our elevator interiors are installed in some the nation’s most recognizable properties.<br><br>\nWorking with architects, elevator consultants, elevator contractors, general contractors, property managers, and building owners, we transform elevator interior visions into safe, functional, and aesthetically pleasing realities.<br><br>",
+  "pages": [{
+    "title": "Modernization/Renovation",
+    "slug": "mondernization-renovation",
+    "portal": false,
+    "weight": 0,
+    "image": "/img/hero/child/projects.jpg",
+    "parent": "projects",
+    "text": "Eklund's works directly with building owners/property managers or in concert with the property's elevator service company to modernize exisiting elevator interiors. <br><br>\nOur skilled team offers customers who are starting from the drawing board with guidance in material selection and complete design services.<br><br>\nAdditionally, Eklund’s virtual Cab Design Studio enables customers to build virtual cab prototypes from our standard elevator cab line. We offer a wide range of popular cab panel layouts for passenger elevators, service elevators and observation (glass) elevators. Our standard cab designs are a great option for achieving a custom cab look and feel at a standard cab cost. Use the virtual cab design studio to test-drive material options from glass and stone to metal mesh and textiles! <br><br>"
+  }, {
+    "title": "New Construction",
+    "slug": "new-construction",
+    "portal": false,
+    "weight": 1,
+    "image": "/img/hero/child/projects.jpg",
+    "parent": "projects",
+    "text": "Eklund’s offers a wide range of custom elevator cab solutions to meet both aesthetic desires and budget requirements for new construction projects from luxury, custom-crafted cabs and interiors, to a wide selection of customizable standard cab interiors.<br><br>\nOur new construction projects range in scale and include buildings from coast to coast. Whether a custom glass observation cab for modern performing arts venue or a lavish interior a Las Vegas hotel, Eklund's total elevator cab solutions will exceed your expectations. <br><br>"
+  }, {
+    "title": "Market Sectors",
+    "slug": "market-sectors",
+    "portal": false,
+    "weight": 2,
+    "image": "/img/hero/child/projects.jpg",
+    "parent": "projects",
+    "text": "With customers from coast to coast, our work can been seen in the nation’s most recognizable properties. Our renovation and new construction projects span across many market sectors including: <br><br>\n\n<ul>\n<li>Heath Care</li>\n<li>Hospitality</li>\n<li>Residential High Rise </li>\n<li>Education</li>\n<li>Civic/Cultural</li>\n<li>Government/Justice</li>\n<li>Commercial Office/Corporate</li>\n<li>Retail</li>\n</ul><br><br>\n\nPlease visit our project photo gallery to browse by each market sector."
+  }, {
+    "title": "Photo Gallery",
+    "slug": "photo-gallery",
+    "portal": false,
+    "weight": 3,
+    "parent": "projects",
+    "image": "",
+    "text": "none",
+    "isProjectPhotoGallery": true
+  }, {
+    "title": "Featured Projects",
+    "slug": "featured-projects",
+    "portal": false,
+    "weight": 4,
+    "parent": "projects",
+    "image": "",
+    "text": "none",
+    "isFeaturedGallery": true
+  }]
+}, {
+  "title": "Company",
+  "slug": "company",
+  "portal": true,
+  "weight": 5,
+  "image": "/img/hero/company.jpg",
+  "text": "Eklund’s, Inc. was founded as a small shop in Grapevine, Texas by James (Jim) B. Eklund in 1983. Prior to founding Eklund’s, Jim had spent his entire adult business career in the elevator cab and entrance business. His vision for Eklund’s was to create a company whose top priority was, and still is today, customer service and satisfaction. Specialty elevator cabs were among the first orders for business, proving to be the beginning of Eklund’s market niche in the elevator industry.",
+  "pages": [{
+    "title": "About Us",
+    "slug": "about-us",
+    "portal": false,
+    "weight": 0,
+    "image": "/img/hero/child/company.jpg",
+    "parent": "company",
+    "text": "Eklund's crafts complete elevator cabs and custom elevator interiors. Whether a new construction project or a renovation, Eklund’s offers a wide range of custom elevator cab solutions to meet both aesthetic desires and budget requirements. Our total elevator cab solutions include design, manufacturing, and installation of luxury, custom-crafted cabs and interiors, and a wide selection of customizable standard cab interiors.<br><br>\n\nWith customers from coast to coast, our projects range from renovating existing cabs to creating custom glass observation cabs and ornate interiors for new buildings. Our elevator interiors are installed in some the nation’s most recognizable properties.<br><br>\n\nWorking with architects, elevator consultants, elevator contractors, general contractors, property managers, and building owners, we transform elevator interior visions into safe, functional, and aesthetically pleasing realities.\nEklund’s fabricates new cabs and interiors from architects’ pre-determined specs. Our skilled team also offers customers who are starting from the drawing board with guidance in material selection and complete design services. In addition, Eklund’s Custom Cab Designer provides the opportunity to build virtual standard cab prototypes online using pre-engineered panels and pre-selected materials. This shortens production schedules and achieves a custom cab look and feel at a standard cab cost.<br><br>\n\nWhatever the project, Eklund's expert craftsmen utilize state-of-the-art manufacturing techniques with long-lasting, serviceable materials that meet the highest industry standards and the most stringent codes. Managing the entire process from concept through installation, Eklund’s complete elevator solutions are fabricated in-house and are installed nationwide by our certified WBE installation partner, BCE Specialties. With 30 years of elevator cab manufacturing experience, Eklund’s takes pride in offer- ing customers leading-edge design, quality craftsmanship, dependability, and prompt on-time delivery.<br><br>\n\nCorporate headquarters are based in the South (Dallas/Fort Worth metroplex). Additional sales offices and design showrooms are located in the Southeast (Houston), Midwest (Chicago), West (Las Vegas), and Northeast (Baltimore/Washington). Manufacturing facilities are located at our South and Northeast offices.<br><br>\n\n<h2>Family Owned and Operated Since 1983</h2>\n\nEklund’s, Inc. was founded as a small shop in Grapevine, Texas by James (Jim) B. Eklund in 1983.  Prior to founding Eklund’s, Jim had spent his entire adult business career in the elevator cab and entrance business.  His vision for Eklund’s was to create a company whose top priority was, and still is today, customer service and satisfaction.  Specialty elevator cabs were among the first orders for business, proving to be the beginning of Eklund’s market niche in the elevator industry.<br><br>\n\nIn 1983, Eklund’s became incorporated and Bradley Eklund, Jim’s son, became Vice President of Production. Beth Cunningham, Jim’s daughter, joined the growing company as President in 1984.<br><br>\n\nEklund's founder, Jim, retired from Eklund’s in 2001 at age 65. Soon after, Brad departed from the family business to pursue his own life-long interests.<br><br>\n\nJim passed away in December of 2012 at the age of 76. One of the pioneers in the elevator cab specialty trade, Jim Eklund's professional legacy lives on here at Eklund's.<br><br>\n\nStill family-owned and operated today, Beth Cunningham remains President. Jim's two grandsons, Heath Cunningham and Joseph Eklund, also have management positions within the company.<br><br>\n\nSince being founded in 1983, Eklund’s has experienced continued growth in customer base, sales dollars, employees, manufacturing capacity, and service capabilities."
+  }, {
+    "title": "Our Team",
+    "slug": "our-team",
+    "portal": false,
+    "weight": 1,
+    "image": "/img/hero/child/company.jpg",
+    "parent": "company",
+    "text": "Meet the team! Our team of experienced total elevator cab solutions professionals provide expert design, project management, fabrication and installation. Please contact us if we can help you with an upcoming project."
+  }, {
+    "title": "Careers",
+    "slug": "careers",
+    "portal": false,
+    "weight": 2,
+    "image": "/img/hero/child/company.jpg",
+    "parent": "company",
+    "text": "We're looking for talented individuals to join our team. Below are the positions that we currently have open. To apply, please send an email to <a href=\"mailto:careers@eklunds.com\">careers@eklunds.com</a>."
+  }, {
+    "title": "News",
+    "slug": "news",
+    "portal": false,
+    "weight": 3,
+    "image": "/img/hero/child/company.jpg",
+    "parent": "company",
+    "text": " Intro text goes here."
+  }, {
+    "title": "Testimonials",
+    "slug": "testimonials",
+    "portal": false,
+    "weight": 4,
+    "image": "/img/hero/child/company.jpg",
+    "parent": "company",
+    "text": "none"
+  }]
+}, {
+  "title": "Contact",
+  "slug": "contact",
+  "portal": true,
+  "text": "<h2>Regional Locations</h2>\n\n<b>Southern Region\/Corporate Headquarters & Manufacturing Facility</b><br>\n2860 Market Loop<br>\nSouthlake, TX 76092<br>\n<a href=\"/company/our-team#southern\">View Region Representatives</a><br>\n\n<hr>\n\n<b>Southeastern Region</b><br>\n5201 Mitchelldale, Suite B3<br>\nHouston, TX 77092<br>\n<a href=\"/company/our-team#southeastern\">View Region Representatives</a><br>\n\n<hr>\n\n<b>Midwestern Region</b><br>\n4114 N. Nashville Ave.<br>\nChicago, IL 60634<br>\n<a href=\"/company/our-team#midwestern\">View Region Representatives</a><br>\n\n<hr>\n\n<b>Western Region</b><br>\n6625 S. Valley View Blvd., Suite 100<br>\nLas Vegas, NV 89118<br>\n<a href=\"/company/our-team#western\">View Region Representatives</a><br>\n\n<hr>\n\n<b>Northeastern Region/Manufacturing Facility</b><br>\n9950 Business Parkway, Suite 100<br>\nLanham, MD 20706<br>\n<a href=\"/company/our-team#northeastern\">View Region Representatives</a>\n<br><br>\n\n<a href=\"/company/our-team\">View Our Team Directory </a>",
+  "weight": 6,
+  "image": "/img/hero/contact.jpg"
+}, {
+  "title": "Total Elevator Cab Solutions",
+  "slug": "home",
+  "weight": 7,
+  "images": ["/img/hero/home1.jpg", "/img/hero/home2.jpg",
+    "/img/hero/home3.jpg", "/img/hero/home4.jpg"
+  ],
+  "text": "Eklund's crafts complete elevator cabs and custom elevator interiors. Whether a new construction project or a renovation, Eklund’s offers a wide range of custom elevator cab solutions to meet both aesthetic desires and budget requirements. Our total elevator cab solutions include design, manufacturing, and installation of luxury, custom-crafted cabs and interiors, and a wide selection of customizable standard cab interiors.<br><br>\n\nWith customers from coast to coast, our projects range from renovating existing cabs to creating custom glass observation cabs and ornate interiors for new buildings. Our elevator interiors are installed in some the nation’s most recognizable properties.<br><br>\n\nWorking with architects, elevator consultants, elevator contractors, general contractors, property managers, and building owners, we transform elevator interior visions into safe, functional, and aesthetically pleasing realities."
 }]

@@ -1,0 +1,55 @@
+[{
+  "title": "Mandarin, Las Vegas",
+  "position": "0",
+  "tags": ["Las Vegas", "Cladding", "Hospitality"],
+  "image": "Mandarin-City-Center-Las-Vegas.jpg"
+}, {
+  "title": "Caesar's Palace, Las Vegas",
+  "position": "1",
+  "tags": ["Las Vegas", "Cladding", "Hospitality"],
+  "image": "caesars-palace-01-100912.jpg"
+}, {
+  "title": "Las Vegas",
+  "position": "0",
+  "tags": ["Las Vegas", "Interiors", "Hospitality"],
+  "image": "IMG_0113.jpg"
+}, {
+  "title": "Encore, Las Vegas",
+  "position": "0",
+  "tags": ["Las Vegas", "Cladding", "Hospitality"],
+  "image": "proofs-25.jpg"
+}, {
+  "title": "Encore, Las Vegas",
+  "position": "0",
+  "tags": ["Las Vegas", "Interiors", "Hospitality", "Leather/Textiles",
+    "Wood"
+  ],
+  "image": "Encore_001__PR_sheet_300dpi.jpg"
+}, {
+  "title": "Encore, Las Vegas",
+  "position": "0",
+  "tags": ["Las Vegas", "Interiors", "Hospitality", "Leather/Textiles",
+    "Wood"
+  ],
+  "image": "Encore_020_red-straight_PR_sheet_300dpi.jpg"
+}, {
+  "title": "Encore, Las Vegas",
+  "position": "0",
+  "tags": ["Las Vegas", "Ceilings", "Hospitality"],
+  "image": "proofs-24.jpg"
+}, {
+  "title": "Oncor Building, Fort Worth",
+  "position": "0",
+  "tags": ["Commercial Office/Corporate", "Interiors", "Glass"],
+  "image": "Oncor-Bldg.-Interiors_Low_2.jpg"
+}, {
+  "title": "Ralph Carr Judicial Center, Denver",
+  "position": "0",
+  "tags": ["Government/Justice", "Interiors", "Metal", "Stone"],
+  "image": "Ralph-Carr-5x7-300.jpg"
+}, {
+  "title": "Encore, Las Vegas",
+  "position": "0",
+  "tags": ["Leather/Textiles", "Interiors", "Metal", "Las Vegas"],
+  "image": "Encore_030_green_PR_sheet.jpg"
+}]

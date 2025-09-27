@@ -1,15 +1,102 @@
 
+.content .pageContainer section .employeeProfile, .content .pageContainer section .careerProfile {
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  line-height: 1.3em;
+}
+.content .pageContainer section .employeeProfile {
+  border-bottom: 0;
+}
+.content .pageContainer section .careerProfile {
+  margin-bottom: 10px;
+}
+.content .pageContainer section .employeeProfile label {
+  float: left;
+  width: 20px;
+}
+.content .pageContainer .datePosted {
+  font-size: 11px;
+  font-style: italic;
+  color: #444;
+}
 .content .contactContainer {
   padding: 25px 25px 0 25px;
 }
+.content .newsContainer {
+  padding: 15px 25px 0 25px;
+  margin-top: 50px;
+}
 
-#body_text>hr:last-of-type { 
+#body_text>hr:last-of-type, .galleryPanel:last-of-type hr {
   display: none;
 }
 .quote {
   width: 240px;
   margin: 30px auto;
 }
+
+.not-found {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+
+/*== Admin ====================================*/
+
+.dashboardTable {
+  width: 900px;
+  margin: auto;
+}
+.dashboardTable th.sortRep {
+  text-align: right;
+}
+fieldset.dashboardFieldset {
+  float: left;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+}
+fieldset.dashboardFieldset legend {
+  padding: 0 5px;
+}
+.tableContainer {
+  width: 900px;
+  height: 315px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tableContainer table {
+  border-collapse: collapse;
+}
+.tableContainer thead {
+  cursor: pointer;
+  background: #ccc;
+}
+.tableContainer tbody tr {
+  background: #f5f5f5;
+}
+.tableContainer thead th, .tableContainer tbody td {
+  padding: 4px 6px;
+  cursor: pointer;
+  text-align: left;
+}
+.tableContainer tbody td .itemTitle {
+  width: 480px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tableContainer tbody tr:nth-child(2n) {
+  background: #fff;
+}
+/*.tableContainer tbody tr.evenRow  { background: #f3f3f3; }*/
 
 .content .dashboard h2 {
   font: 15px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
@@ -35,15 +122,47 @@
   margin: auto;
 }
 
-.not-found {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eeeeee;
-}
+/*== Tabs =====================================*/
 
+ul.tabs {
+  margin: 0 0 15px 0;
+  padding: 10px 0 0 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+ul.tabs li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 -1px -3px -1px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+ul.tabs li.selected {
+  border-bottom: 1px solid #eee;
+  margin-bottom: -4px;
+}
+ul.tabs a {
+  float: left;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background: #eee;
+  border: 1px solid #CCC;
+  border-bottom: 0;
+  padding: 7px 15px;
+  color: #000;
+  text-decoration: none;
+}
+ul.tabs .selected a {
+  background: #eee !important;
+}
+ul.tabs a:hover {
+  /*    background: ;*/
+}
 /*== Modals ===================================*/
+
 #mask {
   /*display: none;*/
   background: #fff;
@@ -155,6 +274,35 @@
   border: 1px solid #ccc;
   padding: 5px;
   width: 180px;
+}
+.ui-datepicker {
+  width: 200px;
+  font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, sans-serif;
+  padding: 10px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px #aaa;
+  -moz-box-shadow: 0 0 10px #aaa;
+  box-shadow: 0 0 10px #aaa;
+}
+.ui-datepicker .ui-datepicker-prev {
+  float: left;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-next {
+  float: right;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-title {
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.ui-datepicker .ui-datepicker-calendar {
+  width: 100%;
+}
+.ui-datepicker .ui-datepicker-calendar th, .ui-datepicker .ui-datepicker-calendar td {
+  padding: 3px;
 }
 button.bigButton {
   position: relative;
